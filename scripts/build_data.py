@@ -18,7 +18,9 @@ import sys
 import unicodedata
 from datetime import date
 
-from config import BUDGET_JSON, MANIFEST, TEXT_DIR, canonical_area
+from config import BUDGET_JSON, DOCS_DIR, MANIFEST, TEXT_DIR, canonical_area
+
+LLMS_TXT = DOCS_DIR / "llms.txt"
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 log = logging.getLogger("build")
@@ -344,10 +346,62 @@ def build() -> dict:
     return data, checks
 
 
+def render_llms(data: dict) -> str:
+    """Render an llms.txt (llmstxt.org) summary from the built data dict.
+
+    Pure function of `data` so the test suite can regenerate and diff it -- the
+    file must always be in sync with budget.json (generated output commits with
+    its source).
+    """
+    url = {s["stem"]: s["url"] for s in data["sources"]}
+    src = lambda stem, page: f"{url[stem]}#page={page}"
+    L = []
+    L.append("# Virginia Budget Explorer")
+    L.append("")
+    L.append(f"> Source-verified explorer of the Commonwealth of Virginia's general "
+             f"fund budget. Every figure is transcribed from official Virginia House "
+             f"Appropriations Committee documents and verified verbatim against its "
+             f"source page. By-area dollars are general fund. Data as of "
+             f"{data['meta'].get('data_as_of')}.")
+    L.append("")
+    L.append("## Headline totals")
+    for t in data["totals"]:
+        L.append(f"- {t['biennium']} ({t['stage']}) {t['kind']}: {t['value_str']} "
+                 f"— [{t['enactment']}, p. {t['page']}]({src(t['source_stem'], t['page'])})")
+    L.append("")
+    L.append("## General fund spending by secretarial area (FY2024-2026, amended)")
+    amended = [r for r in data["by_area"] if r["stage"] == "As amended"]
+    for r in sorted(amended, key=lambda r: -r["millions"]):
+        L.append(f"- {r['area']}: ${r['millions']/1000:.1f}B "
+                 f"— [p. {r['page']}]({src(r['source_stem'], r['page'])})")
+    L.append("")
+    L.append("## Next year (FY2026-2028, HB 30) — key changes")
+    for c in data.get("next_year_changes", []):
+        L.append(f"- [{c['area']}] {c['headline']}: \"{c['text']}\" "
+                 f"([p. {c['page']}]({src(c['source_stem'], c['page'])}))")
+    L.append("")
+    L.append("## Policy quotes")
+    for q in data["quotes"]:
+        L.append(f"- [{q['topic']}] \"{q['text']}\" — {q['doc_title']}, "
+                 f"[p. {q['page']}]({src(q['source_stem'], q['page'])})")
+    L.append("")
+    L.append("## Sources")
+    for s in data["sources"]:
+        L.append(f"- [{s['title']}]({s['url']}) — {s['publisher']}, {s['page_count']} pp, as of {s['as_of']}")
+    L.append("")
+    L.append("## Data")
+    L.append("- [Machine-readable dataset](data/budget.json)")
+    L.append("- [Per-data-point verification report](data/validation.json) "
+             f"— {data['meta'].get('checks_passed')} figures and quotes checked against source")
+    L.append("")
+    return "\n".join(L)
+
+
 def main() -> int:
     data, checks = build()
     BUDGET_JSON.parent.mkdir(parents=True, exist_ok=True)
     BUDGET_JSON.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+    LLMS_TXT.write_text(render_llms(data), encoding="utf-8")
     log.info("✓ wrote %s · %d source-checks passed · %d areas · %d quotes",
              BUDGET_JSON.relative_to(BUDGET_JSON.parent.parent.parent),
              checks, len(data["areas"]), len(data["quotes"]))
