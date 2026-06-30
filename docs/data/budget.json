@@ -1,0 +1,626 @@
+{
+  "meta": {
+    "title": "Virginia Budget Explorer",
+    "subtitle": "Where Virginia's money comes from and where it goes",
+    "captured_at": "2026-06-30",
+    "checks_passed": 56,
+    "note": "Figures transcribed from official House Appropriations Committee documents and verified verbatim against the source page. By-area dollars are General Fund, $ in millions."
+  },
+  "areas": [
+    "Health & Human Resources",
+    "K-12 Education",
+    "Higher Education",
+    "Public Safety & Veterans",
+    "Finance",
+    "Administration & Central Accounts",
+    "Judicial & Other",
+    "Commerce, Labor, Natural Resources & Agriculture",
+    "Debt Service"
+  ],
+  "by_area": [
+    {
+      "area": "Health & Human Resources",
+      "label_raw": "Health & Human Resources",
+      "millions": 20003.1,
+      "value_str": "20,003.1",
+      "biennium": "FY2024-2026",
+      "stage": "As adopted",
+      "enactment": "Chapter 2 (2024)",
+      "as_of": "2024-05-31",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 9
+    },
+    {
+      "area": "K-12 Education",
+      "label_raw": "K-12 Education",
+      "millions": 19712.9,
+      "value_str": "19,712.9",
+      "biennium": "FY2024-2026",
+      "stage": "As adopted",
+      "enactment": "Chapter 2 (2024)",
+      "as_of": "2024-05-31",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 9
+    },
+    {
+      "area": "Higher Education",
+      "label_raw": "Higher Education",
+      "millions": 7230.8,
+      "value_str": "7,230.8",
+      "biennium": "FY2024-2026",
+      "stage": "As adopted",
+      "enactment": "Chapter 2 (2024)",
+      "as_of": "2024-05-31",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 9
+    },
+    {
+      "area": "Public Safety & Veterans",
+      "label_raw": "Public Safety & Veterans",
+      "millions": 5405.3,
+      "value_str": "5,405.3",
+      "biennium": "FY2024-2026",
+      "stage": "As adopted",
+      "enactment": "Chapter 2 (2024)",
+      "as_of": "2024-05-31",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 9
+    },
+    {
+      "area": "Finance",
+      "label_raw": "Finance",
+      "millions": 2272.7,
+      "value_str": "2,272.7",
+      "biennium": "FY2024-2026",
+      "stage": "As adopted",
+      "enactment": "Chapter 2 (2024)",
+      "as_of": "2024-05-31",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 9
+    },
+    {
+      "area": "Debt Service",
+      "label_raw": "Debt Service",
+      "millions": 2072.9,
+      "value_str": "2,072.9",
+      "biennium": "FY2024-2026",
+      "stage": "As adopted",
+      "enactment": "Chapter 2 (2024)",
+      "as_of": "2024-05-31",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 9
+    },
+    {
+      "area": "Commerce, Labor, Natural Resources & Agriculture",
+      "label_raw": "Commerce, Labor, Nat Resources & Ag.",
+      "millions": 2034.4,
+      "value_str": "2,034.4",
+      "biennium": "FY2024-2026",
+      "stage": "As adopted",
+      "enactment": "Chapter 2 (2024)",
+      "as_of": "2024-05-31",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 9
+    },
+    {
+      "area": "Administration & Central Accounts",
+      "label_raw": "Admin + Central Accounts",
+      "millions": 2667.2,
+      "value_str": "2,667.2",
+      "biennium": "FY2024-2026",
+      "stage": "As adopted",
+      "enactment": "Chapter 2 (2024)",
+      "as_of": "2024-05-31",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 9
+    },
+    {
+      "area": "Judicial & Other",
+      "label_raw": "Judicial + Other",
+      "millions": 2349.8,
+      "value_str": "2,349.8",
+      "biennium": "FY2024-2026",
+      "stage": "As adopted",
+      "enactment": "Chapter 2 (2024)",
+      "as_of": "2024-05-31",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 9
+    },
+    {
+      "area": "Health & Human Resources",
+      "label_raw": "Health & Human Resources",
+      "millions": 20872.0,
+      "value_str": "20,872",
+      "biennium": "FY2024-2026",
+      "stage": "As amended",
+      "enactment": "Chapter 725 (2025)",
+      "as_of": "2025-05-19",
+      "source_stem": "overview_2025_ch725",
+      "page": 9
+    },
+    {
+      "area": "K-12 Education",
+      "label_raw": "K-12 Education",
+      "millions": 20256.0,
+      "value_str": "20,256",
+      "biennium": "FY2024-2026",
+      "stage": "As amended",
+      "enactment": "Chapter 725 (2025)",
+      "as_of": "2025-05-19",
+      "source_stem": "overview_2025_ch725",
+      "page": 9
+    },
+    {
+      "area": "Higher Education",
+      "label_raw": "Higher Education",
+      "millions": 7487.0,
+      "value_str": "7,487",
+      "biennium": "FY2024-2026",
+      "stage": "As amended",
+      "enactment": "Chapter 725 (2025)",
+      "as_of": "2025-05-19",
+      "source_stem": "overview_2025_ch725",
+      "page": 9
+    },
+    {
+      "area": "Public Safety & Veterans",
+      "label_raw": "Public Safety & Veterans",
+      "millions": 5450.0,
+      "value_str": "5,450",
+      "biennium": "FY2024-2026",
+      "stage": "As amended",
+      "enactment": "Chapter 725 (2025)",
+      "as_of": "2025-05-19",
+      "source_stem": "overview_2025_ch725",
+      "page": 9
+    },
+    {
+      "area": "Finance",
+      "label_raw": "Finance",
+      "millions": 3701.0,
+      "value_str": "3,701",
+      "biennium": "FY2024-2026",
+      "stage": "As amended",
+      "enactment": "Chapter 725 (2025)",
+      "as_of": "2025-05-19",
+      "source_stem": "overview_2025_ch725",
+      "page": 9
+    },
+    {
+      "area": "Debt Service",
+      "label_raw": "Debt Service",
+      "millions": 2018.0,
+      "value_str": "2,018",
+      "biennium": "FY2024-2026",
+      "stage": "As amended",
+      "enactment": "Chapter 725 (2025)",
+      "as_of": "2025-05-19",
+      "source_stem": "overview_2025_ch725",
+      "page": 9
+    },
+    {
+      "area": "Commerce, Labor, Natural Resources & Agriculture",
+      "label_raw": "Commerce, Labor, Nat Resources & Ag.",
+      "millions": 2380.0,
+      "value_str": "2,380",
+      "biennium": "FY2024-2026",
+      "stage": "As amended",
+      "enactment": "Chapter 725 (2025)",
+      "as_of": "2025-05-19",
+      "source_stem": "overview_2025_ch725",
+      "page": 9
+    },
+    {
+      "area": "Administration & Central Accounts",
+      "label_raw": "Admin + Central Accounts",
+      "millions": 2843.0,
+      "value_str": "2,843",
+      "biennium": "FY2024-2026",
+      "stage": "As amended",
+      "enactment": "Chapter 725 (2025)",
+      "as_of": "2025-05-19",
+      "source_stem": "overview_2025_ch725",
+      "page": 9
+    },
+    {
+      "area": "Judicial & Other",
+      "label_raw": "Judicial + Other",
+      "millions": 2468.0,
+      "value_str": "2,468",
+      "biennium": "FY2024-2026",
+      "stage": "As amended",
+      "enactment": "Chapter 725 (2025)",
+      "as_of": "2025-05-19",
+      "source_stem": "overview_2025_ch725",
+      "page": 9
+    }
+  ],
+  "ngf_revenue": [
+    {
+      "source": "Federal Grants & Contracts",
+      "label_raw": "Federal Grants & Contracts",
+      "millions": 45606.7,
+      "value_str": "45,606.7",
+      "biennium": "FY2024-2026",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 8
+    },
+    {
+      "source": "Educational Institutional",
+      "label_raw": "Educational Institutional",
+      "millions": 15267.2,
+      "value_str": "15,267.2",
+      "biennium": "FY2024-2026",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 8
+    },
+    {
+      "source": "Nongeneral Fund Taxes",
+      "label_raw": "NGF Taxes",
+      "millions": 14669.2,
+      "value_str": "14,669.2",
+      "biennium": "FY2024-2026",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 8
+    },
+    {
+      "source": "All Other Nongeneral Fund",
+      "label_raw": "All Other NGF",
+      "millions": 12413.2,
+      "value_str": "12,413.2",
+      "biennium": "FY2024-2026",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 8
+    },
+    {
+      "source": "Hospital & Institutional",
+      "label_raw": "Hosp $ Inst",
+      "millions": 6742.6,
+      "value_str": "6,742.6",
+      "biennium": "FY2024-2026",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 8
+    },
+    {
+      "source": "Sales",
+      "label_raw": "Sales",
+      "millions": 5168.4,
+      "value_str": "5,168.4",
+      "biennium": "FY2024-2026",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 8
+    },
+    {
+      "source": "Licenses, Rights & Privileges",
+      "label_raw": "Licenses, Rights and Privileges",
+      "millions": 2830.5,
+      "value_str": "2,830.5",
+      "biennium": "FY2024-2026",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 8
+    },
+    {
+      "source": "Lottery Proceeds Fund",
+      "label_raw": "Lottery Proceeds Fund",
+      "millions": 1705.8,
+      "value_str": "1,705.8",
+      "biennium": "FY2024-2026",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 8
+    }
+  ],
+  "gf_resources_fy2026": [
+    {
+      "label": "Personal Income",
+      "millions": 21714.2,
+      "value_str": "21,714.2",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 17
+    },
+    {
+      "label": "Sales Tax",
+      "millions": 4987.4,
+      "value_str": "4,987.4",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 17
+    },
+    {
+      "label": "Other Taxes",
+      "millions": 2633.3,
+      "value_str": "2,633.3",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 17
+    },
+    {
+      "label": "Corporate Income",
+      "millions": 2025.5,
+      "value_str": "2,025.5",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 17
+    },
+    {
+      "label": "Transfers",
+      "millions": 1572.2,
+      "value_str": "1,572.2",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 17
+    },
+    {
+      "label": "Carryforward",
+      "millions": 1404.7,
+      "value_str": "1,404.7",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 17
+    }
+  ],
+  "gf_top10_fy2026": [
+    {
+      "label": "K-12",
+      "millions": 9508.7,
+      "value_str": "9,508.7",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 17
+    },
+    {
+      "label": "Medicaid",
+      "millions": 7649.3,
+      "value_str": "7,649.3",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 17
+    },
+    {
+      "label": "Higher Ed Institutions",
+      "millions": 2025.5,
+      "value_str": "2,025.5",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 17
+    },
+    {
+      "label": "Debt Redemption",
+      "millions": 993.0,
+      "value_str": "993.0",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 17
+    },
+    {
+      "label": "Personal Property Tax Relief",
+      "millions": 950.0,
+      "value_str": "950.0",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 17
+    },
+    {
+      "label": "State Correction Facilities",
+      "millions": 907.6,
+      "value_str": "907.6",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 17
+    },
+    {
+      "label": "Higher Ed Student Aid",
+      "millions": 854.8,
+      "value_str": "854.8",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 17
+    },
+    {
+      "label": "Health Services",
+      "millions": 703.9,
+      "value_str": "703.9",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 17
+    },
+    {
+      "label": "Sheriffs & Regional Jails",
+      "millions": 634.2,
+      "value_str": "634.2",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 17
+    },
+    {
+      "label": "Salary Increases",
+      "millions": 561.2,
+      "value_str": "561.2",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 17
+    }
+  ],
+  "totals": [
+    {
+      "biennium": "FY2024-2026",
+      "stage": "As adopted",
+      "enactment": "Chapter 2 (2024)",
+      "kind": "GF spending",
+      "value_str": "$63.7 billion",
+      "billions": 63.7,
+      "as_of": "2024-05-31",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 8
+    },
+    {
+      "biennium": "FY2024-2026",
+      "stage": "As amended",
+      "enactment": "Chapter 725 (2025)",
+      "kind": "GF spending",
+      "value_str": "$67.4 billion",
+      "billions": 67.4,
+      "as_of": "2025-05-19",
+      "source_stem": "overview_2025_ch725",
+      "page": 9
+    },
+    {
+      "biennium": "FY2026-2028",
+      "stage": "As introduced",
+      "enactment": "HB 30 (2026)",
+      "kind": "GF resources",
+      "value_str": "$71.5 billion",
+      "billions": 71.5,
+      "as_of": "2026-06-22",
+      "source_stem": "conf_report_hb30_2026",
+      "page": 4
+    }
+  ],
+  "quotes": [
+    {
+      "text": "Spending in the areas of K-12 and Health and Human Resources represents 62% of the state's total biennial operational budget.",
+      "topic": "Spending priorities",
+      "principle": "Just two areas drive nearly two-thirds of operating spending.",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 8,
+      "doc_title": "An Overview of Virginia's Biennial Budget FY 2024-2026",
+      "as_of": "2024-05-31"
+    },
+    {
+      "text": "Chapter 2 includes general fund spending totaling $63.7 billion over the biennium with $31.8 billion in FY 2025 and $32.0 billion in FY 2026 in operating expenditures.",
+      "topic": "General Fund spending",
+      "principle": "The enacted FY2024-2026 general fund operating budget.",
+      "source_stem": "overview_2024_fy2024-2026",
+      "page": 8,
+      "doc_title": "An Overview of Virginia's Biennial Budget FY 2024-2026",
+      "as_of": "2024-05-31"
+    },
+    {
+      "text": "Children's Services Act (CSA) Forecast. Adds $37.0 million in FY 2025 and $63.3 million in FY 2026 for estimated caseload and cost increases in CSA.",
+      "topic": "Health & Human Resources",
+      "principle": "Caseload-driven forecasts push HHR spending up in the amended budget.",
+      "source_stem": "overview_2025_ch725",
+      "page": 9,
+      "doc_title": "Overview of Virginia's Budget for FY 2024-2026 (Chapter 725)",
+      "as_of": "2025-05-19"
+    },
+    {
+      "text": "51.1% of general fund appropriations are for K-12 and Medicaid",
+      "topic": "Where the money goes",
+      "principle": "K-12 and Medicaid alone are over half the general fund.",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 17,
+      "doc_title": "Virginia in Focus: Budget and Outcomes for Core Government Areas",
+      "as_of": "2026-01-15"
+    },
+    {
+      "text": "The top 10 general fund appropriations total $24.4 billion, or 72.3% of the general fund budget",
+      "topic": "Concentration of spending",
+      "principle": "Ten line items account for nearly three-quarters of the general fund.",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 17,
+      "doc_title": "Virginia in Focus: Budget and Outcomes for Core Government Areas",
+      "as_of": "2026-01-15"
+    },
+    {
+      "text": "The personal income tax provides about 63% of General Fund revenues",
+      "topic": "Where the money comes from",
+      "principle": "The general fund leans heavily on a single revenue source.",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 17,
+      "doc_title": "Virginia in Focus: Budget and Outcomes for Core Government Areas",
+      "as_of": "2026-01-15"
+    },
+    {
+      "text": "HB 30 as introduced included $71.5 billion in total general fund resources",
+      "topic": "FY2026-2028 resources",
+      "principle": "The next biennium opens with materially larger general fund resources.",
+      "source_stem": "conf_report_hb30_2026",
+      "page": 4,
+      "doc_title": "HB 30 Conference Report (FY 2026-2028 Biennial Budget)",
+      "as_of": "2026-06-22"
+    },
+    {
+      "text": "Conference Report includes Part 3 language - applicable for this biennium only - establishing a rate of $0.011/kWh of all electricity consumed at each data center per month",
+      "topic": "Data centers",
+      "principle": "A first-of-its-kind energy consumption fee targeting data centers.",
+      "source_stem": "conf_report_hb30_2026",
+      "page": 5,
+      "doc_title": "HB 30 Conference Report (FY 2026-2028 Biennial Budget)",
+      "as_of": "2026-06-22"
+    },
+    {
+      "text": "Annual revenue collections are capped at $600 million per year",
+      "topic": "Data centers",
+      "principle": "The new data-center fee is capped, with overages refunded pro-rata.",
+      "source_stem": "conf_report_hb30_2026",
+      "page": 5,
+      "doc_title": "HB 30 Conference Report (FY 2026-2028 Biennial Budget)",
+      "as_of": "2026-06-22"
+    },
+    {
+      "text": "Reflects revenue reduction of $51.0 million in the first year and $120.0 million in the second year to reflect increasing the standard deduction",
+      "topic": "Tax relief",
+      "principle": "A standard-deduction increase trades revenue for household tax relief.",
+      "source_stem": "conf_report_hb30_2026",
+      "page": 6,
+      "doc_title": "HB 30 Conference Report (FY 2026-2028 Biennial Budget)",
+      "as_of": "2026-06-22"
+    },
+    {
+      "text": "Unemployment has been rising in Virginia and its regions since the beginning of 2025 with statewide unemployment reaching 3.5% in September from 3% in January 2025.",
+      "topic": "Economy",
+      "principle": "A softening labor market is the backdrop to the next budget.",
+      "source_stem": "virginia_in_focus_2026",
+      "page": 12,
+      "doc_title": "Virginia in Focus: Budget and Outcomes for Core Government Areas",
+      "as_of": "2026-01-15"
+    }
+  ],
+  "sources": [
+    {
+      "stem": "overview_2024_fy2024-2026",
+      "url": "https://budget.lis.virginia.gov/sessionreport/2024/2/2434/",
+      "title": "An Overview of Virginia's Biennial Budget FY 2024-2026",
+      "publisher": "House Appropriations Committee Staff",
+      "enactment": "Chapter 2, 2024 Special Session I",
+      "biennium": "FY2024-2026",
+      "stage": "as adopted",
+      "as_of": "2024-05-31",
+      "bytes": 1744970,
+      "page_count": 100,
+      "sha256": "a47decbea02f10129339cdb80969c602b9943171a899aa35b7526c218e8183fe",
+      "http_status": null,
+      "captured_at": "2026-06-30"
+    },
+    {
+      "stem": "overview_2025_ch725",
+      "url": "https://budget.lis.virginia.gov/sessionreport/2025/1/2467/",
+      "title": "Overview of Virginia's Budget for FY 2024-2026 (Chapter 725)",
+      "publisher": "House Appropriations Committee Staff",
+      "enactment": "Chapter 725, 2025 Acts of Assembly",
+      "biennium": "FY2024-2026",
+      "stage": "amended",
+      "as_of": "2025-05-19",
+      "bytes": 1945138,
+      "page_count": 79,
+      "sha256": "24382a52d86dadbc2e3cd52d593df85acbb243404275a0a6f15ee8acf78f92ff",
+      "http_status": null,
+      "captured_at": "2026-06-30"
+    },
+    {
+      "stem": "conf_report_hb30_2026",
+      "url": "https://hac.virginia.gov/wp-content/uploads/2026/06/Conference-Report-Summary-Presentation.pdf",
+      "title": "HB 30 Conference Report (FY 2026-2028 Biennial Budget)",
+      "publisher": "House Appropriations Committee Staff",
+      "enactment": "HB 30 Conference Report",
+      "biennium": "FY2026-2028",
+      "stage": "conference report",
+      "as_of": "2026-06-22",
+      "bytes": 512933,
+      "page_count": 68,
+      "sha256": "30c4355a8042449be2901ae6bc22eb66a7e9dca75ccb9a1a3ab67d4dd13a90ab",
+      "http_status": null,
+      "captured_at": "2026-06-30"
+    },
+    {
+      "stem": "virginia_in_focus_2026",
+      "url": "https://hac.virginia.gov/wp-content/uploads/2026/01/Virginia-In-Focus-PRINT.pdf",
+      "title": "Virginia in Focus: Budget and Outcomes for Core Government Areas",
+      "publisher": "House Appropriations Committee Staff",
+      "enactment": "n/a",
+      "biennium": "FY2024-2026",
+      "stage": "reference",
+      "as_of": "2026-01-15",
+      "bytes": 15642642,
+      "page_count": 81,
+      "sha256": "18e73b84517865e97a3550c23e9db4f95fce64bf1113441cdcb69254ccd68aec",
+      "http_status": null,
+      "captured_at": "2026-06-30"
+    }
+  ]
+}
