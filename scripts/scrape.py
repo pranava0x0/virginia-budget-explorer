@@ -20,6 +20,7 @@ import logging
 import sys
 import time
 from datetime import date
+from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
@@ -52,18 +53,40 @@ def _is_pdf(path) -> bool:
         return fh.read(5) == b"%PDF-"
 
 
-def download(url: str, dest) -> int:
+def download(url: str, dest, attempts: int = 4) -> int:
+    """Fetch a PDF with retry + exponential backoff on transient failures.
+
+    Backs off from 10s (10, 20, 40...) on HTTP 429/5xx and connection errors,
+    per the project's network-ethics rule; a 4xx other than 429 fails fast
+    (retrying a 404 is pointless). Validates the %PDF magic before caching.
+    """
     _check_host(url)
     req = Request(url, headers={"User-Agent": USER_AGENT})
-    with urlopen(req, timeout=60) as resp:
-        status = resp.status
-        data = resp.read()
-    if not data.startswith(b"%PDF-"):
-        raise ValueError(
-            f"{url} did not return a PDF (got {data[:40]!r}); refusing to cache"
-        )
-    dest.write_bytes(data)
-    return status
+    backoff = 10
+    for attempt in range(1, attempts + 1):
+        try:
+            with urlopen(req, timeout=60) as resp:
+                status = resp.status
+                data = resp.read()
+            if not data.startswith(b"%PDF-"):
+                raise ValueError(
+                    f"{url} did not return a PDF (got {data[:40]!r}); refusing to cache")
+            dest.write_bytes(data)
+            return status
+        except HTTPError as exc:
+            transient = exc.code == 429 or 500 <= exc.code < 600
+            if not transient or attempt == attempts:
+                raise
+            log.warning("%s -> HTTP %s, retry %d/%d in %ds",
+                        url, exc.code, attempt, attempts, backoff)
+        except (URLError, TimeoutError) as exc:
+            if attempt == attempts:
+                raise
+            log.warning("%s -> %s, retry %d/%d in %ds",
+                        url, exc, attempt, attempts, backoff)
+        time.sleep(backoff)
+        backoff *= 2
+    raise RuntimeError(f"unreachable: exhausted retries for {url}")
 
 
 def main(argv: list[str]) -> int:

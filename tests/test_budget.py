@@ -60,6 +60,14 @@ class TestQuotes(unittest.TestCase):
         for q in BUDGET["quotes"]:
             self.assertTrue(q.get("topic") and q.get("principle") and q.get("doc_title"))
 
+    def test_next_year_changes_verbatim(self):
+        changes = BUDGET.get("next_year_changes", [])
+        self.assertGreaterEqual(len(changes), 8, "expected a set of next-year changes")
+        for c in changes:
+            self.assertTrue(on_page(c["source_stem"], c["page"], c["text"]),
+                            f"next-year change not verbatim on {c['source_stem']} p{c['page']}: {c['text'][:50]!r}")
+            self.assertTrue(c.get("headline") and c.get("area"))
+
 
 class TestValues(unittest.TestCase):
     def test_by_area_values_on_page(self):
@@ -123,18 +131,37 @@ class TestProvenance(unittest.TestCase):
             self.assertIn(host, ALLOWED_HOSTS, f"off-allowlist source host: {host}")
 
     def test_manifest_hashes_match_disk(self):
+        # The raw PDFs are gitignored (regenerable via scrape.py), so on a fresh
+        # checkout they're absent -- this is a local-integrity check that only
+        # runs where the cached PDF exists, not a hard requirement to commit it.
         import hashlib
+        checked = 0
         for m in MANIFEST:
             pdf = ROOT / "sources" / "raw" / f"{m['stem']}.pdf"
-            self.assertTrue(pdf.exists(), f"missing cached PDF: {pdf}")
+            if not pdf.exists():
+                continue
             digest = hashlib.sha256(pdf.read_bytes()).hexdigest()
             self.assertEqual(digest, m["sha256"], f"{m['stem']} sha256 drift (re-run scrape.py)")
+            checked += 1
+        if checked == 0:
+            self.skipTest("no cached PDFs present (fresh checkout); page JSON is the evidence")
 
     def test_scraper_rejects_off_allowlist_host(self):
         from scrape import _check_host
         with self.assertRaises(ValueError):
             _check_host("https://evil.example.com/budget.pdf")
         _check_host("https://budget.lis.virginia.gov/sessionreport/2024/2/2434/")  # no raise
+
+
+class TestValidationArtifact(unittest.TestCase):
+    """The shipped validation.json must exist and report all points passing."""
+    def test_validation_all_passed(self):
+        vp = ROOT / "docs" / "data" / "validation.json"
+        self.assertTrue(vp.exists(), "run scripts/validate.py to produce validation.json")
+        v = json.loads(vp.read_text())
+        self.assertTrue(v["all_passed"], f"{v['failed']} data points failed validation")
+        self.assertEqual(v["passed"], v["total"])
+        self.assertGreaterEqual(v["total"], 50)
 
 
 if __name__ == "__main__":

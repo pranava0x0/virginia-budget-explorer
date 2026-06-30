@@ -9,25 +9,33 @@ Modeled after the clarity of open-data budget sites (clean tables, big honest
 numbers, transparent sourcing) without the weight: no backend, no charting
 library, no build step. Just a `docs/` folder you can drop on GitHub Pages.
 
-## What's in it
+Every figure shows a source + page citation, and a build-time validator confirms
+all 76 data points against their source page (the green "verified" banner).
 
-- **KPI strip** — biennial general fund, biggest area, areas tracked, next biennium.
-- **Donut** — general fund spending by secretarial area (toggle adopted ↔ amended).
-- **Table** — every area, both budget versions, with the change and share. Sortable.
-- **Over-time chart** — each area's spending from adopted (May 2024) to amended (May 2025).
-- **Resources** — where the FY2026 general fund comes from.
-- **Quotes** — policy principles, each verbatim with a page-cited link to the PDF.
-- **Sources** — the four official documents behind every number.
+## What's in it (tabbed)
+
+- **Overview** — KPI strip, a donut of general fund spending by secretarial area
+  (toggle adopted ↔ amended), and a sortable table of every area with the change,
+  share, and a per-row source link.
+- **Over time** — each area's general fund across three budgets: FY2024-2026 as
+  adopted, as amended, and FY2026-2028 as introduced.
+- **Funding** — where the money comes from (general fund + nongeneral fund).
+- **Next year** — the FY2026-2028 budget (HB 30): proposed totals, the by-area
+  change vs the current budget, and key deltas/changes pulled verbatim from the
+  107-page committee overview, each with a page citation.
+- **Quotes & sources** — policy principles (verbatim, page-cited) and the five
+  official documents behind every number, with the verification status.
 
 ## Pipeline
 
-Four scripts, run in order. Re-runs are cheap: downloads are cached and the build
+Five scripts, run in order. Re-runs are cheap: downloads are cached and the build
 is deterministic.
 
 ```bash
 python3 scripts/scrape.py        # download + cache official PDFs -> sources/raw/, manifest.json
 python3 scripts/extract.py       # per-page text (PyMuPDF) -> data/text/*.{txt,pages.json}
 python3 scripts/build_data.py    # curated + source-verified data -> docs/data/budget.json
+python3 scripts/validate.py      # per-data-point check -> docs/data/validation.json (CI gate)
 python3 -m unittest discover -s tests   # lock quotes/numbers to their pages
 ```
 
@@ -45,12 +53,13 @@ table pick up the new time point automatically.
 
 ## Data provenance
 
-- Sources: the "Overview of Virginia's Budget" reports, the HB 30 Conference
-  Report, and "Virginia in Focus" — all House Appropriations Committee staff
-  documents, fetched from `budget.lis.virginia.gov` and `hac.virginia.gov`
-  (enforced by a host allowlist in the scraper).
+- Sources: the "Overview of Virginia's Budget" reports for FY2024-2026 and
+  FY2026-2028, the HB 30 Conference Report, and "Virginia in Focus" — all House
+  Appropriations Committee staff documents, fetched from `budget.lis.virginia.gov`
+  and `hac.virginia.gov` (enforced by a host allowlist in the scraper).
 - `sources/manifest.json` records each document's URL, sha256, page count, and
-  capture date.
+  capture date. "Data as of" on the site reflects the newest *source* date, not
+  the build date.
 - By-area dollars are **general fund, $ in millions**.
 - **Rounding note:** the KPI and table totals are summed from the area figures,
   so they can differ by ~0.1B from a document's own rounded headline (e.g. the

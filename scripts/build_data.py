@@ -54,7 +54,7 @@ def load_pages(stem: str) -> list[str]:
 BY_AREA = [
     # stem, page, biennium, stage, enactment, as_of, [(label_raw, value_str)]
     ("overview_2024_fy2024-2026", 9, "FY2024-2026", "As adopted",
-     "Chapter 2 (2024)", "2024-05-31", "63.7", [
+     "Chapter 2 (2024)", "2024-05-31", "63.7", "millions", [
         ("Health & Human Resources", "20,003.1"),
         ("K-12 Education", "19,712.9"),
         ("Higher Education", "7,230.8"),
@@ -66,7 +66,7 @@ BY_AREA = [
         ("Judicial + Other", "2,349.8"),
      ]),
     ("overview_2025_ch725", 9, "FY2024-2026", "As amended",
-     "Chapter 725 (2025)", "2025-05-19", "67.4", [
+     "Chapter 725 (2025)", "2025-05-19", "67.4", "millions", [
         ("Health & Human Resources", "20,872"),
         ("K-12 Education", "20,256"),
         ("Higher Education", "7,487"),
@@ -76,6 +76,19 @@ BY_AREA = [
         ("Commerce, Labor, Nat Resources & Ag.", "2,380"),
         ("Admin + Central Accounts", "2,843"),
         ("Judicial + Other", "2,468"),
+     ]),
+    # FY2026-2028, HB 30 as introduced (this table prints $ in BILLIONS).
+    ("overview_2026_fy2026-2028", 21, "FY2026-2028", "As introduced",
+     "HB 30 (2026)", "2026-01-14", "70.1", "billions", [
+        ("Health and Human Resources", "24.0"),
+        ("K-12 Education", "21.2"),
+        ("Higher Education", "7.8"),
+        ("Public Safety and Homeland Security + Veterans", "5.8"),
+        ("Finance", "2.3"),
+        ("Administration + Central Accounts", "2.8"),
+        ("Debt Service", "2.1"),
+        ("Judicial + Other", "2.2"),
+        ("Commerce, Labor, Ag & Natural Sources", "1.9"),
      ]),
 ]
 
@@ -119,8 +132,13 @@ TOTALS = [
      "Chapter 2 (2024)", "GF spending", "$63.7 billion", "2024-05-31"),
     ("overview_2025_ch725", 9, "FY2024-2026", "As amended",
      "Chapter 725 (2025)", "GF spending", "$67.4 billion", "2025-05-19"),
-    ("conf_report_hb30_2026", 4, "FY2026-2028", "As introduced",
-     "HB 30 (2026)", "GF resources", "$71.5 billion", "2026-06-22"),
+    # FY2026-2028 figures from the contemporaneous introduced-budget overview
+    # (the conference report restates the introduced total slightly differently;
+    # use the primary January source to avoid shipping two "introduced" numbers).
+    ("overview_2026_fy2026-2028", 20, "FY2026-2028", "As introduced",
+     "HB 30 (2026)", "GF spending", "$70.1 billion", "2026-01-14"),
+    ("overview_2026_fy2026-2028", 17, "FY2026-2028", "As introduced",
+     "HB 30 (2026)", "GF resources", "$71.9 billion", "2026-01-14"),
 ]
 
 # Key quotes & policy principles. Each is verified verbatim on its cited page.
@@ -143,9 +161,6 @@ QUOTES = [
     ("virginia_in_focus_2026", 17, "Where the money comes from",
      "The personal income tax provides about 63% of General Fund revenues",
      "The general fund leans heavily on a single revenue source."),
-    ("conf_report_hb30_2026", 4, "FY2026-2028 resources",
-     "HB 30 as introduced included $71.5 billion in total general fund resources",
-     "The next biennium opens with materially larger general fund resources."),
     ("conf_report_hb30_2026", 5, "Data centers",
      "Conference Report includes Part 3 language - applicable for this biennium only - establishing a rate of $0.011/kWh of all electricity consumed at each data center per month",
      "A first-of-its-kind energy consumption fee targeting data centers."),
@@ -159,6 +174,35 @@ QUOTES = [
      "Unemployment has been rising in Virginia and its regions since the beginning of 2025 with statewide unemployment reaching 3.5% in September from 3% in January 2025.",
      "A softening labor market is the backdrop to the next budget."),
 ]
+
+# Key deltas/changes in the NEXT biennium (FY2026-2028, HB 30 as introduced).
+# Each entry: (page, area, headline, verbatim_excerpt). The text is verified on
+# its page; `headline` is our short framing of the change.
+NEXT_YEAR = [
+    (20, "Overall", "$2.5B more than the current budget",
+     "Measured against Chapter 725 operating expenses, this represents an increase of $2.5 billion over the biennium"),
+    (22, "Overall", "$4.7B in net new spending",
+     "HB 30, as introduced, includes a new amendments totaling a net of $4.7 billion of funding increases over the biennium"),
+    (21, "Overall", "K-12 and HHS still dominate",
+     "continue to dominate total spending with 65% of spending directed to these areas of government"),
+    (24, "K-12 Education", "School construction grants nearly to $519M",
+     "increasing the total grants available for the biennium from $360.0 million to $519.0 million"),
+    (23, "Health & Human Resources", "Children's health insurance funded",
+     "Includes spending of $29.6 million in FY 2027 and $55.2 million in FY 2028 for the children's health insurance programs (FAMIS and M-CHIP)"),
+    (23, "Health & Human Resources", "DD Waiver rate increases",
+     "to increase rates for certain DD Waiver services that were included in a rate study of services required pursuant to the Permanent Injunction"),
+    (21, "Commerce, Labor, Natural Resources & Agriculture", "$144.1M for water quality",
+     "$144.1 million for the Water Quality Improvement Fund and Agriculture Cost-Share program"),
+    (21, "Commerce, Labor, Natural Resources & Agriculture", "$35M for biotech at UVA",
+     "$35.0 million for the Institute for Biotechnology at UVA"),
+    (25, "Commerce, Labor, Natural Resources & Agriculture", "$43.5M for local stormwater",
+     "Proposes $43.5 million GF in FY 2027 for deposit in the Stormwater Local Assistance Fund"),
+    (26, "Public Safety & Veterans", "More for inmate medical care",
+     "Proposes an additional $28.9 million GF in FY 2027 and $30.8 million GF in FY 2028 to reflect increased estimated costs of providing medical care to inmates"),
+    (26, "Public Safety & Veterans", "New Cardinal Disaster Relief Fund",
+     "Proposes the establishment of the Cardinal Disaster Relief Fund with the Department of Emergency Management"),
+]
+NEXT_YEAR_STEM = "overview_2026_fy2026-2028"
 
 
 # --- verification helpers --------------------------------------------------
@@ -191,15 +235,16 @@ def build() -> dict:
 
     # by-area, with sum gate against the stated total
     by_area = []
-    for stem, page, biennium, stage, enactment, as_of, total_str, rows in BY_AREA:
+    for stem, page, biennium, stage, enactment, as_of, total_str, unit, rows in BY_AREA:
         total_b = float(total_str)
+        scale = 1000.0 if unit == "billions" else 1.0  # normalize everything to $M
         running = 0.0
         for label_raw, value_str in rows:
             assert_on_page(stem, page, value_str, "area value"); checks += 1
             canon = canonical_area(label_raw)
             if canon is None:
                 raise VerifyError(f"unmapped area label: {label_raw!r}")
-            millions = float(value_str.replace(",", ""))
+            millions = float(value_str.replace(",", "")) * scale
             running += millions
             by_area.append({
                 "area": canon, "label_raw": label_raw,
@@ -259,19 +304,32 @@ def build() -> dict:
                        "doc_title": manifest[stem]["title"],
                        "as_of": manifest[stem]["as_of"]})
 
+    # next-year (FY2026-2028) key changes, verbatim-verified on their page
+    next_year = []
+    for page, area, headline, text in NEXT_YEAR:
+        assert_on_page(NEXT_YEAR_STEM, page, text, "next-year change"); checks += 1
+        next_year.append({"area": area, "headline": headline, "text": text,
+                          "source_stem": NEXT_YEAR_STEM, "page": page,
+                          "doc_title": manifest[NEXT_YEAR_STEM]["title"]})
+
     # display order: areas descending by amended (Ch.725) spending
     amended = {r["area"]: r["millions"] for r in by_area if r["stage"] == "As amended"}
     area_order = sorted(amended, key=amended.get, reverse=True)
+
+    # "Data as of" must reflect the newest SOURCE date, not the build date --
+    # rebuilding from unchanged documents must not advance the freshness stamp.
+    data_as_of = max(m["as_of"] for m in manifest.values())
 
     data = {
         "meta": {
             "title": "Virginia Budget Explorer",
             "subtitle": "Where Virginia's money comes from and where it goes",
-            "captured_at": date.today().isoformat(),
+            "data_as_of": data_as_of,
+            "built_at": date.today().isoformat(),
             "checks_passed": checks,
             "note": ("Figures transcribed from official House Appropriations "
                      "Committee documents and verified verbatim against the "
-                     "source page. By-area dollars are General Fund, $ in millions."),
+                     "source page. By-area dollars are General Fund."),
         },
         "areas": area_order,
         "by_area": by_area,
@@ -280,6 +338,7 @@ def build() -> dict:
         "gf_top10_fy2026": gf_top10,
         "totals": totals,
         "quotes": quotes,
+        "next_year_changes": next_year,
         "sources": list(manifest.values()),
     }
     return data, checks

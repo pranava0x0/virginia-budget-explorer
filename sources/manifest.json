@@ -30,6 +30,21 @@
     "captured_at": "2026-06-30"
   },
   {
+    "stem": "overview_2026_fy2026-2028",
+    "url": "https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf",
+    "title": "An Overview of Virginia's Biennial Budget for FY 2026-2028 (HB 30, as introduced)",
+    "publisher": "House Appropriations Committee Staff",
+    "enactment": "HB 30, as introduced",
+    "biennium": "FY2026-2028",
+    "stage": "as introduced",
+    "as_of": "2026-01-14",
+    "bytes": 6975059,
+    "page_count": 107,
+    "sha256": "18b5b1332dc4f3d160f0d70ef3830f710b7ef988e78372adc69383e585ff3c5d",
+    "http_status": null,
+    "captured_at": "2026-06-30"
+  },
+  {
     "stem": "conf_report_hb30_2026",
     "url": "https://hac.virginia.gov/wp-content/uploads/2026/06/Conference-Report-Summary-Presentation.pdf",
     "title": "HB 30 Conference Report (FY 2026-2028 Biennial Budget)",
