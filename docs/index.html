@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Virginia Budget Explorer — where the Commonwealth's money goes</title>
+  <meta name="description" content="A plain-language, source-cited explorer of Virginia's general fund budget. Every figure traces to an official House Appropriations Committee document and page.">
+  <meta name="color-scheme" content="light">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230b5fff'/><text x='16' y='23' font-size='18' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>VA</text></svg>">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <span class="brand-mark" aria-hidden="true">VA</span>
+      <span class="brand-name">Budget&nbsp;Explorer <span>· Commonwealth of Virginia</span></span>
+      <span class="spacer"></span>
+      <span class="asof" id="asof"></span>
+    </div>
+  </header>
+
+  <main id="app">
+    <div class="state" role="status" aria-live="polite">
+      <div class="spinner" aria-hidden="true"></div>
+      <p>Loading Virginia's budget…</p>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <p><strong>How this works.</strong> Figures are transcribed from the official “Overview of Virginia's Budget,” the HB 30 Conference Report, and “Virginia in Focus” (House Appropriations Committee), then verified verbatim against the source page by an automated build. By-area dollars are <strong>general fund, $ in millions</strong>. This is an independent civic tool, not an official state publication.</p>
+      <p>Source documents: <a href="https://budget.lis.virginia.gov/" target="_blank" rel="noopener">budget.lis.virginia.gov</a> · <a href="https://hac.virginia.gov/" target="_blank" rel="noopener">hac.virginia.gov</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+/* Virginia Budget Explorer — retail-clean, civic-trustworthy.
+   Design tokens live here; the area color palette lives in app.js THEME
+   (single source of truth shared with the SVG charts). */
+
+:root {
+  --ink: #0b1b2b;
+  --ink-soft: #4a5b6b;
+  --ink-faint: #7c8a98;
+  --bg: #eef3f9;
+  --card: #ffffff;
+  --line: #e2e9f1;
+  --brand: #0b5fff;
+  --brand-dark: #083bbf;
+  --brand-tint: #e7efff;
+  --accent: #ffd23f;          /* bright price-tag yellow */
+  --accent-ink: #3d2f00;
+  --up: #0b5fff;              /* change = neutral blue, not a value judgment */
+  --down: #64748b;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 1px 2px rgba(11, 27, 43, .06), 0 8px 24px rgba(11, 27, 43, .06);
+  --shadow-hover: 0 2px 4px rgba(11, 27, 43, .08), 0 16px 40px rgba(11, 27, 43, .12);
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --num: "SF Mono", "Roboto Mono", ui-monospace, "Menlo", monospace;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { line-height: 1.15; margin: 0; letter-spacing: -.02em; }
+a { color: var(--brand); }
+:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; border-radius: 6px; }
+[hidden] { display: none !important; }
+.num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
+
+/* ---------- layout ---------- */
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+section { margin: 40px auto; scroll-margin-top: 76px; }
+.section-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+.section-head h2 { font-size: clamp(20px, 3.4vw, 28px); }
+.section-head .eyebrow {
+  font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--brand); background: var(--brand-tint); padding: 5px 10px; border-radius: 999px;
+}
+.section-head p { margin: 0; color: var(--ink-soft); font-size: 14.5px; flex-basis: 100%; }
+
+/* ---------- top bar ---------- */
+.topbar {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(255, 255, 255, .9); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar .wrap { display: flex; align-items: center; gap: 12px; height: 60px; }
+.brand-mark {
+  display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 9px;
+  background: var(--brand); color: #fff; font-weight: 900; font-size: 18px; flex: none;
+  box-shadow: 0 4px 12px rgba(11, 95, 255, .35);
+}
+.brand-name { font-weight: 800; font-size: 16px; }
+.brand-name span { color: var(--ink-faint); font-weight: 600; }
+.topbar .spacer { flex: 1; }
+.topbar .asof { font-size: 12.5px; color: var(--ink-faint); }
+
+/* ---------- hero ---------- */
+.hero { padding: 36px 0 8px; }
+.hero h1 { font-size: clamp(30px, 6vw, 52px); font-weight: 900; }
+.hero .lede { font-size: clamp(15px, 2.4vw, 19px); color: var(--ink-soft); margin-top: 12px; max-width: 60ch; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 28px; }
+.kpi {
+  background: var(--card); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow);
+  border: 1px solid var(--line); position: relative; overflow: hidden;
+}
+.kpi::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--brand); }
+.kpi.accent::before { background: var(--accent); }
+.kpi .k-label { font-size: 12.5px; font-weight: 700; color: var(--ink-faint); text-transform: uppercase; letter-spacing: .06em; }
+.kpi .k-value { font-size: clamp(28px, 5vw, 40px); font-weight: 900; margin-top: 6px; letter-spacing: -.03em; }
+.kpi .k-value .unit { font-size: .5em; font-weight: 800; color: var(--ink-soft); margin-left: 4px; }
+.kpi .k-sub { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+
+/* ---------- cards / panels ---------- */
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px; }
+.grid-2 { display: grid; grid-template-columns: 1.05fr .95fr; gap: 22px; align-items: start; }
+
+/* ---------- pills / toggles ---------- */
+.pills { display: inline-flex; background: #eaf0f8; border-radius: 999px; padding: 4px; gap: 2px; }
+.pill {
+  border: 0; background: transparent; cursor: pointer; font: inherit; font-weight: 700; font-size: 13.5px;
+  color: var(--ink-soft); padding: 9px 16px; border-radius: 999px; min-height: 40px; transition: .15s;
+}
+.pill[aria-pressed="true"] { background: #fff; color: var(--brand); box-shadow: var(--shadow); }
+.pill:hover { color: var(--ink); }
+
+/* ---------- donut ---------- */
+.donut-wrap { display: grid; grid-template-columns: minmax(0, 260px) 1fr; gap: 20px; align-items: center; }
+.donut { width: 100%; max-width: 260px; }
+/* Start the first slice at 12 o'clock. Rotate via CSS (not an SVG transform
+   attribute) with transform-box: fill-box so the origin is the circle's own
+   centre — applying rotation through the attribute double-counts the origin
+   and throws the arcs off-canvas. */
+.donut .slice {
+  cursor: pointer; transition: opacity .15s;
+  transform: rotate(-90deg); transform-origin: 50% 50%; transform-box: fill-box;
+}
+.donut .slice:hover, .donut .slice.active { opacity: 1 !important; }
+.donut.has-active .slice:not(.active) { opacity: .35; }
+.donut-center .c-val { font-size: 26px; font-weight: 900; }
+.donut-center .c-lab { font-size: 11px; fill: var(--ink-faint); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+.legend { display: flex; flex-direction: column; gap: 2px; }
+.legend-row {
+  display: grid; grid-template-columns: 14px 1fr auto auto; gap: 10px; align-items: center;
+  padding: 8px 10px; border-radius: var(--radius-sm); border: 0; background: transparent; width: 100%;
+  cursor: pointer; font: inherit; text-align: left; color: var(--ink); min-height: 40px;
+}
+.legend-row:hover, .legend-row.active { background: #f3f7fc; }
+.legend-row .dot { width: 13px; height: 13px; border-radius: 4px; }
+.legend-row .lname { font-size: 13.5px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.legend-row .lval { font-weight: 800; font-size: 13.5px; }
+.legend-row .lpct { font-size: 12px; color: var(--ink-faint); font-weight: 700; min-width: 38px; text-align: right; }
+
+/* ---------- slope / multi-year chart ---------- */
+.chart-svg { width: 100%; height: auto; display: block; overflow: visible; }
+.chart-svg .axis { stroke: var(--line); stroke-width: 1; }
+.chart-svg .gridline { stroke: #f0f4f9; stroke-width: 1; }
+.chart-svg .tick { fill: var(--ink-faint); font-size: 11px; font-weight: 600; }
+.chart-svg .xlab { fill: var(--ink); font-size: 12.5px; font-weight: 800; }
+.chart-svg .serie { fill: none; stroke-width: 3; stroke-linecap: round; transition: opacity .15s; }
+.chart-svg .dot { transition: opacity .15s; }
+.chart-svg .dlabel { font-size: 11px; font-weight: 800; }
+.chart-svg.has-active .serie:not(.active),
+.chart-svg.has-active .dot:not(.active),
+.chart-svg.has-active .dlabel:not(.active) { opacity: .12; }
+
+/* ---------- table ---------- */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: var(--radius-sm); }
+table.budget { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 520px; }
+.budget th, .budget td { padding: 13px 14px; text-align: right; white-space: nowrap; }
+.budget th:first-child, .budget td:first-child { text-align: left; }
+.budget thead th {
+  position: sticky; top: 0; background: #f7fafd; color: var(--ink-soft); font-size: 12px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .04em; border-bottom: 2px solid var(--line); cursor: pointer; user-select: none;
+}
+.budget thead th .arrow { color: var(--brand); font-size: 10px; }
+.budget tbody tr { border-bottom: 1px solid var(--line); transition: background .12s; }
+.budget tbody tr:hover, .budget tbody tr.active { background: var(--brand-tint); }
+.budget tbody tr:last-child { border-bottom: 0; }
+.budget .area-cell { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+.budget .area-cell .dot { width: 12px; height: 12px; border-radius: 4px; flex: none; }
+.budget .big { font-weight: 800; }
+.budget .delta { font-weight: 800; font-size: 12.5px; }
+.budget .delta.up { color: var(--up); }
+.budget .delta.down { color: var(--down); }
+.budget tfoot td { padding: 13px 14px; font-weight: 900; border-top: 2px solid var(--line); text-align: right; }
+.budget tfoot td:first-child { text-align: left; }
+
+/* ---------- quotes ---------- */
+.quote-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 18px; }
+.qcard {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: .18s;
+}
+.qcard:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+.qcard .topic {
+  align-self: flex-start; font-size: 11.5px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase;
+  color: var(--brand-dark); background: var(--brand-tint); padding: 5px 11px; border-radius: 999px;
+}
+.qcard blockquote { margin: 0; font-size: 16px; font-weight: 600; color: var(--ink); line-height: 1.45; }
+.qcard blockquote::before { content: "\201C"; color: var(--accent); font-size: 30px; font-weight: 900; line-height: 0; vertical-align: -.35em; margin-right: 2px; }
+.qcard .principle { font-size: 13.5px; color: var(--ink-soft); }
+.qcard .cite {
+  margin-top: auto; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  font-size: 12.5px; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 12px;
+}
+.page-chip {
+  display: inline-flex; align-items: center; gap: 5px; background: var(--accent); color: var(--accent-ink);
+  font-weight: 800; font-size: 12px; padding: 5px 11px; border-radius: 999px; text-decoration: none; min-height: 30px;
+}
+.page-chip:hover { filter: brightness(.96); }
+.qcard .src { overflow: hidden; text-overflow: ellipsis; }
+
+/* ---------- sources ---------- */
+.src-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.src-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px; }
+.src-card .badge { font-size: 11px; font-weight: 800; color: var(--brand); text-transform: uppercase; letter-spacing: .06em; }
+.src-card h3 { font-size: 15px; margin: 6px 0 8px; }
+.src-card .meta { font-size: 12.5px; color: var(--ink-faint); }
+.src-card a { font-weight: 700; font-size: 13px; text-decoration: none; }
+.src-card a:hover { text-decoration: underline; }
+
+/* ---------- states ---------- */
+.state { text-align: center; padding: 60px 20px; color: var(--ink-soft); }
+.spinner { width: 38px; height: 38px; border: 4px solid var(--line); border-top-color: var(--brand); border-radius: 50%; margin: 0 auto 16px; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------- footer ---------- */
+footer.site { border-top: 1px solid var(--line); padding: 28px 0 60px; color: var(--ink-faint); font-size: 13px; }
+footer.site strong { color: var(--ink-soft); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 860px) {
+  .grid-2 { grid-template-columns: 1fr; }
+  .donut-wrap { grid-template-columns: 1fr; }
+  .donut { margin: 0 auto; }
+}
+@media (max-width: 520px) {
+  .wrap { padding: 0 14px; }
+  section { margin: 30px auto; }
+  .hero { padding: 24px 0 4px; }
+  .kpi .k-value { font-size: 30px; }
+  .brand-name span { display: none; }       /* keep the top bar to one line */
+  .topbar .asof { display: none; }
+}
+/* keep chip-scale controls from bloating on touch; only enlarge true targets */
+@media (pointer: coarse) {
+  .pill, .legend-row, .budget thead th, .page-chip { min-height: 44px; }
+  .page-chip { padding: 8px 13px; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }

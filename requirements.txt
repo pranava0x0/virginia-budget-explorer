@@ -1,0 +1,2 @@
+# Pinned exact (supply-chain hardening). The only third-party dependency.
+PyMuPDF==1.26.5
