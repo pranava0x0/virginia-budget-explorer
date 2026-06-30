@@ -192,19 +192,18 @@ function heroBlock() {
   sec.appendChild(el("p", { class: "lede",
     text: "A plain-language look at the Commonwealth's general fund budget — every figure traced to an official House Appropriations Committee document, down to the page." }));
   if (VALIDATION) {
-    sec.appendChild(el("div", { class: "verified-banner", title: "Checked by scripts/validate.py" }, [
-      el("span", { class: "vcheck", "aria-hidden": "true", text: "✓" }),
-      el("span", { html: null, text: `All ${VALIDATION.passed} of ${VALIDATION.total} figures and quotes verified against their source page` }),
-      el("span", { class: "vdate", text: "· checked " + VALIDATION.validated_on }),
+    sec.appendChild(el("p", { class: "verified-note", title: "Checked by scripts/validate.py" }, [
+      el("span", { class: "vcheck", "aria-hidden": "true", text: "✓ " }),
+      `Every figure and quote checked against its source page — ${VALIDATION.passed}/${VALIDATION.total}, ${VALIDATION.validated_on}`,
     ]));
   }
   return sec;
 }
 
 // ---- shared bits ----
-function sectionHead(eyebrow, title, desc) {
+function sectionHead(_eyebrow, title, desc) {
+  // plain title + lede — no decorative kicker label
   return el("div", { class: "section-head" }, [
-    el("span", { class: "eyebrow", text: eyebrow }),
     el("h2", { text: title }),
     desc ? el("p", { text: desc }) : null,
   ]);
@@ -315,7 +314,7 @@ function focusArea(area, pin = false) {
 
 function overviewTableSection(rows) {
   const sec = el("section", { class: "wrap" });
-  sec.appendChild(sectionHead("The receipts", "Every area, both budget versions",
+  sec.appendChild(sectionHead("", "Detail by area",
     "General fund, $ in billions. “Change” compares amended (Ch. 725) to adopted (Ch. 2). Each row links to its source page."));
   const adoptedTot = totalFor(rows, "adopted"), amendedTot = totalFor(rows, "amended");
   const sorters = { area: (a, b) => a.area.localeCompare(b.area), adopted: (a, b) => a.adopted - b.adopted,
@@ -361,7 +360,7 @@ function setSort(key) { if (sortKey === key) sortDir *= -1; else { sortKey = key
 // ============================ TRENDS TAB ============================
 function tabTrends(root) {
   const sec = el("section", { class: "wrap" });
-  sec.appendChild(sectionHead("Over time", "General fund by area, across budgets",
+  sec.appendChild(sectionHead("", "Spending by area, over time",
     "From the FY2024-2026 budget as adopted and amended, through the FY2026-2028 budget as introduced. Tap an area to isolate its line."));
   const panel = el("div", { class: "panel" });
   const host = el("div", {});
@@ -499,7 +498,7 @@ function tabNextYear(root) {
 
   // by-area: FY26-28 introduced vs FY24-26 amended
   const sec = el("section", { class: "wrap" });
-  sec.appendChild(sectionHead("Next year", "FY2026-2028 by area, and the change",
+  sec.appendChild(sectionHead("", "Proposed budget by area",
     "How HB 30 (introduced January 2026) compares to the current amended budget, by area. Each row links to its source page."));
   const tbody = el("tbody");
   [...rows].sort((a, b) => b.introduced - a.introduced).forEach((r) => {
@@ -527,7 +526,7 @@ function tabNextYear(root) {
 
   // key changes, grouped — each verbatim with a page citation
   const sec2 = el("section", { class: "wrap" });
-  sec2.appendChild(sectionHead("What's changing", "Key proposals in next year's budget",
+  sec2.appendChild(sectionHead("", "Key changes in HB 30",
     "Substantive changes pulled from the 107-page committee overview of HB 30. Every line is verbatim and links to its page."));
   const grid = el("div", { class: "change-grid" });
   (DATA.next_year_changes || []).forEach((c) => {
@@ -547,7 +546,7 @@ function tabNextYear(root) {
   const nyQuotes = DATA.quotes.filter((q) => ["Data centers", "Tax relief"].includes(q.topic));
   if (nyQuotes.length) {
     const sec3 = el("section", { class: "wrap" });
-    sec3.appendChild(sectionHead("Policy", "Notable policy moves", ""));
+    sec3.appendChild(sectionHead("", "Tax and policy changes", ""));
     sec3.appendChild(quoteGrid(nyQuotes));
     root.appendChild(sec3);
   }
@@ -566,16 +565,16 @@ function quoteGrid(quotes) {
 }
 function tabSources(root) {
   const sec = el("section", { class: "wrap" });
-  sec.appendChild(sectionHead("In their words", "Policy principles, with page citations",
+  sec.appendChild(sectionHead("", "Quotes from the source documents",
     "Every quote is verbatim from the official document and links to the exact page."));
   sec.appendChild(quoteGrid(DATA.quotes));
   root.appendChild(sec);
 
   const sec2 = el("section", { class: "wrap" });
-  sec2.appendChild(sectionHead("Sources", "Official documents behind every number", ""));
-  if (VALIDATION) sec2.appendChild(el("div", { class: "verified-banner inline" }, [
-    el("span", { class: "vcheck", "aria-hidden": "true", text: "✓" }),
-    el("span", { text: `${VALIDATION.passed}/${VALIDATION.total} data points verified against source (checked ${VALIDATION.validated_on}). Run scripts/validate.py to re-check.` }),
+  sec2.appendChild(sectionHead("", "Source documents", ""));
+  if (VALIDATION) sec2.appendChild(el("p", { class: "verified-note" }, [
+    el("span", { class: "vcheck", "aria-hidden": "true", text: "✓ " }),
+    `${VALIDATION.passed}/${VALIDATION.total} data points verified against source (checked ${VALIDATION.validated_on}). Run scripts/validate.py to re-check.`,
   ]));
   const grid = el("div", { class: "src-grid" });
   DATA.sources.forEach((s) => grid.appendChild(el("div", { class: "src-card" }, [
