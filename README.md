@@ -1,13 +1,19 @@
 # Virginia Budget Explorer
 
+**Live:** https://pranava0x0.github.io/virginia-budget-explorer/
+
 A small, static dashboard for the Commonwealth of Virginia's general fund budget.
 Every figure and quote is scraped from official House Appropriations Committee
 documents and **verified verbatim against its source page** before it ships — the
 build fails if a number or quote drifts from the document it cites.
 
-Modeled after the clarity of open-data budget sites (clean tables, big honest
-numbers, transparent sourcing) without the weight: no backend, no charting
-library, no build step. Just a `docs/` folder you can drop on GitHub Pages.
+Clean, accessible, and dependency-free: tabbed views, self-hosted Inter, inline
+SVG charts (no charting library), a source + page citation on every figure, a
+per-data-point validator, and an `llms.txt` so machines get the same facts. No
+backend, no build step — just a `docs/` folder on GitHub Pages.
+
+Accessibility: keyboard-navigable ARIA tabs, skip link, table captions,
+AA-contrast text, visible focus, and reduced-motion support.
 
 Every figure shows a source + page citation, and a build-time validator confirms
 all 76 data points against their source page (the green "verified" banner).

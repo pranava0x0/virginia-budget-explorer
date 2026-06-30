@@ -24,3 +24,6 @@
 - **No secrets** — the pipeline reads only public documents; nothing to commit.
 - **No machine-local paths** in committed data — sources are stored as public URLs
   in `sources/manifest.json`.
+- **Self-hosted fonts** — Inter woff2 files are committed under `docs/fonts` and
+  served same-origin; no third-party font/CDN request at runtime (also avoids the
+  privacy concern of an external font host).
