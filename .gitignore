@@ -1,0 +1,24 @@
+# Secrets / env
+.env
+.env.local
+credentials.json
+secrets/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+
+# Local dev tooling (preview server config; absolute paths, not portable)
+.claude/
+
+# Large cached source PDFs are regenerable via scripts/scrape.py.
+# Keep them out of git; the manifest (URL + sha256) is the source of truth.
+sources/raw/*.pdf
+
+# Extracted intermediate text (regenerable via scripts/extract.py)
+data/text/
