@@ -2,9 +2,10 @@
   "meta": {
     "title": "Virginia Budget Explorer",
     "subtitle": "Where Virginia's money comes from and where it goes",
-    "captured_at": "2026-06-30",
-    "checks_passed": 56,
-    "note": "Figures transcribed from official House Appropriations Committee documents and verified verbatim against the source page. By-area dollars are General Fund, $ in millions."
+    "data_as_of": "2026-06-22",
+    "built_at": "2026-06-30",
+    "checks_passed": 76,
+    "note": "Figures transcribed from official House Appropriations Committee documents and verified verbatim against the source page. By-area dollars are General Fund."
   },
   "areas": [
     "Health & Human Resources",
@@ -233,6 +234,114 @@
       "as_of": "2025-05-19",
       "source_stem": "overview_2025_ch725",
       "page": 9
+    },
+    {
+      "area": "Health & Human Resources",
+      "label_raw": "Health and Human Resources",
+      "millions": 24000.0,
+      "value_str": "24.0",
+      "biennium": "FY2026-2028",
+      "stage": "As introduced",
+      "enactment": "HB 30 (2026)",
+      "as_of": "2026-01-14",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 21
+    },
+    {
+      "area": "K-12 Education",
+      "label_raw": "K-12 Education",
+      "millions": 21200.0,
+      "value_str": "21.2",
+      "biennium": "FY2026-2028",
+      "stage": "As introduced",
+      "enactment": "HB 30 (2026)",
+      "as_of": "2026-01-14",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 21
+    },
+    {
+      "area": "Higher Education",
+      "label_raw": "Higher Education",
+      "millions": 7800.0,
+      "value_str": "7.8",
+      "biennium": "FY2026-2028",
+      "stage": "As introduced",
+      "enactment": "HB 30 (2026)",
+      "as_of": "2026-01-14",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 21
+    },
+    {
+      "area": "Public Safety & Veterans",
+      "label_raw": "Public Safety and Homeland Security + Veterans",
+      "millions": 5800.0,
+      "value_str": "5.8",
+      "biennium": "FY2026-2028",
+      "stage": "As introduced",
+      "enactment": "HB 30 (2026)",
+      "as_of": "2026-01-14",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 21
+    },
+    {
+      "area": "Finance",
+      "label_raw": "Finance",
+      "millions": 2300.0,
+      "value_str": "2.3",
+      "biennium": "FY2026-2028",
+      "stage": "As introduced",
+      "enactment": "HB 30 (2026)",
+      "as_of": "2026-01-14",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 21
+    },
+    {
+      "area": "Administration & Central Accounts",
+      "label_raw": "Administration + Central Accounts",
+      "millions": 2800.0,
+      "value_str": "2.8",
+      "biennium": "FY2026-2028",
+      "stage": "As introduced",
+      "enactment": "HB 30 (2026)",
+      "as_of": "2026-01-14",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 21
+    },
+    {
+      "area": "Debt Service",
+      "label_raw": "Debt Service",
+      "millions": 2100.0,
+      "value_str": "2.1",
+      "biennium": "FY2026-2028",
+      "stage": "As introduced",
+      "enactment": "HB 30 (2026)",
+      "as_of": "2026-01-14",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 21
+    },
+    {
+      "area": "Judicial & Other",
+      "label_raw": "Judicial + Other",
+      "millions": 2200.0,
+      "value_str": "2.2",
+      "biennium": "FY2026-2028",
+      "stage": "As introduced",
+      "enactment": "HB 30 (2026)",
+      "as_of": "2026-01-14",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 21
+    },
+    {
+      "area": "Commerce, Labor, Natural Resources & Agriculture",
+      "label_raw": "Commerce, Labor, Ag & Natural Sources",
+      "millions": 1900.0,
+      "value_str": "1.9",
+      "biennium": "FY2026-2028",
+      "stage": "As introduced",
+      "enactment": "HB 30 (2026)",
+      "as_of": "2026-01-14",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 21
     }
   ],
   "ngf_revenue": [
@@ -452,12 +561,23 @@
       "biennium": "FY2026-2028",
       "stage": "As introduced",
       "enactment": "HB 30 (2026)",
+      "kind": "GF spending",
+      "value_str": "$70.1 billion",
+      "billions": 70.1,
+      "as_of": "2026-01-14",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 20
+    },
+    {
+      "biennium": "FY2026-2028",
+      "stage": "As introduced",
+      "enactment": "HB 30 (2026)",
       "kind": "GF resources",
-      "value_str": "$71.5 billion",
-      "billions": 71.5,
-      "as_of": "2026-06-22",
-      "source_stem": "conf_report_hb30_2026",
-      "page": 4
+      "value_str": "$71.9 billion",
+      "billions": 71.9,
+      "as_of": "2026-01-14",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 17
     }
   ],
   "quotes": [
@@ -516,15 +636,6 @@
       "as_of": "2026-01-15"
     },
     {
-      "text": "HB 30 as introduced included $71.5 billion in total general fund resources",
-      "topic": "FY2026-2028 resources",
-      "principle": "The next biennium opens with materially larger general fund resources.",
-      "source_stem": "conf_report_hb30_2026",
-      "page": 4,
-      "doc_title": "HB 30 Conference Report (FY 2026-2028 Biennial Budget)",
-      "as_of": "2026-06-22"
-    },
-    {
       "text": "Conference Report includes Part 3 language - applicable for this biennium only - establishing a rate of $0.011/kWh of all electricity consumed at each data center per month",
       "topic": "Data centers",
       "principle": "A first-of-its-kind energy consumption fee targeting data centers.",
@@ -561,6 +672,96 @@
       "as_of": "2026-01-15"
     }
   ],
+  "next_year_changes": [
+    {
+      "area": "Overall",
+      "headline": "$2.5B more than the current budget",
+      "text": "Measured against Chapter 725 operating expenses, this represents an increase of $2.5 billion over the biennium",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 20,
+      "doc_title": "An Overview of Virginia's Biennial Budget for FY 2026-2028 (HB 30, as introduced)"
+    },
+    {
+      "area": "Overall",
+      "headline": "$4.7B in net new spending",
+      "text": "HB 30, as introduced, includes a new amendments totaling a net of $4.7 billion of funding increases over the biennium",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 22,
+      "doc_title": "An Overview of Virginia's Biennial Budget for FY 2026-2028 (HB 30, as introduced)"
+    },
+    {
+      "area": "Overall",
+      "headline": "K-12 and HHS still dominate",
+      "text": "continue to dominate total spending with 65% of spending directed to these areas of government",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 21,
+      "doc_title": "An Overview of Virginia's Biennial Budget for FY 2026-2028 (HB 30, as introduced)"
+    },
+    {
+      "area": "K-12 Education",
+      "headline": "School construction grants nearly to $519M",
+      "text": "increasing the total grants available for the biennium from $360.0 million to $519.0 million",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 24,
+      "doc_title": "An Overview of Virginia's Biennial Budget for FY 2026-2028 (HB 30, as introduced)"
+    },
+    {
+      "area": "Health & Human Resources",
+      "headline": "Children's health insurance funded",
+      "text": "Includes spending of $29.6 million in FY 2027 and $55.2 million in FY 2028 for the children's health insurance programs (FAMIS and M-CHIP)",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 23,
+      "doc_title": "An Overview of Virginia's Biennial Budget for FY 2026-2028 (HB 30, as introduced)"
+    },
+    {
+      "area": "Health & Human Resources",
+      "headline": "DD Waiver rate increases",
+      "text": "to increase rates for certain DD Waiver services that were included in a rate study of services required pursuant to the Permanent Injunction",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 23,
+      "doc_title": "An Overview of Virginia's Biennial Budget for FY 2026-2028 (HB 30, as introduced)"
+    },
+    {
+      "area": "Commerce, Labor, Natural Resources & Agriculture",
+      "headline": "$144.1M for water quality",
+      "text": "$144.1 million for the Water Quality Improvement Fund and Agriculture Cost-Share program",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 21,
+      "doc_title": "An Overview of Virginia's Biennial Budget for FY 2026-2028 (HB 30, as introduced)"
+    },
+    {
+      "area": "Commerce, Labor, Natural Resources & Agriculture",
+      "headline": "$35M for biotech at UVA",
+      "text": "$35.0 million for the Institute for Biotechnology at UVA",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 21,
+      "doc_title": "An Overview of Virginia's Biennial Budget for FY 2026-2028 (HB 30, as introduced)"
+    },
+    {
+      "area": "Commerce, Labor, Natural Resources & Agriculture",
+      "headline": "$43.5M for local stormwater",
+      "text": "Proposes $43.5 million GF in FY 2027 for deposit in the Stormwater Local Assistance Fund",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 25,
+      "doc_title": "An Overview of Virginia's Biennial Budget for FY 2026-2028 (HB 30, as introduced)"
+    },
+    {
+      "area": "Public Safety & Veterans",
+      "headline": "More for inmate medical care",
+      "text": "Proposes an additional $28.9 million GF in FY 2027 and $30.8 million GF in FY 2028 to reflect increased estimated costs of providing medical care to inmates",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 26,
+      "doc_title": "An Overview of Virginia's Biennial Budget for FY 2026-2028 (HB 30, as introduced)"
+    },
+    {
+      "area": "Public Safety & Veterans",
+      "headline": "New Cardinal Disaster Relief Fund",
+      "text": "Proposes the establishment of the Cardinal Disaster Relief Fund with the Department of Emergency Management",
+      "source_stem": "overview_2026_fy2026-2028",
+      "page": 26,
+      "doc_title": "An Overview of Virginia's Biennial Budget for FY 2026-2028 (HB 30, as introduced)"
+    }
+  ],
   "sources": [
     {
       "stem": "overview_2024_fy2024-2026",
@@ -589,6 +790,21 @@
       "bytes": 1945138,
       "page_count": 79,
       "sha256": "24382a52d86dadbc2e3cd52d593df85acbb243404275a0a6f15ee8acf78f92ff",
+      "http_status": null,
+      "captured_at": "2026-06-30"
+    },
+    {
+      "stem": "overview_2026_fy2026-2028",
+      "url": "https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf",
+      "title": "An Overview of Virginia's Biennial Budget for FY 2026-2028 (HB 30, as introduced)",
+      "publisher": "House Appropriations Committee Staff",
+      "enactment": "HB 30, as introduced",
+      "biennium": "FY2026-2028",
+      "stage": "as introduced",
+      "as_of": "2026-01-14",
+      "bytes": 6975059,
+      "page_count": 107,
+      "sha256": "18b5b1332dc4f3d160f0d70ef3830f710b7ef988e78372adc69383e585ff3c5d",
       "http_status": null,
       "captured_at": "2026-06-30"
     },

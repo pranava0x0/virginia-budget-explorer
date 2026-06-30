@@ -30,6 +30,20 @@ Living audit trail. Each entry: date · area · description · root cause · sta
   then relax the dense cluster upward into the empty space above it — plus leader
   lines from each label to its data point.
 
+- **2026-06-30 · tests · hash check required gitignored PDFs (Codex P1).**
+  `test_manifest_hashes_match_disk` asserted every `sources/raw/*.pdf` existed,
+  but those are gitignored — so the suite failed on a fresh checkout. **test bug.**
+  *Fix:* skip the per-file hash check when the PDF is absent (it's a local
+  integrity check; the committed `.pages.json` is the evidence the other tests use).
+
+- **2026-06-30 · data freshness · "Data as of" showed the build date (Codex P2).**
+  `build_data.py` stamped `meta.captured_at = date.today()`, and the header
+  rendered it as data freshness — so rebuilding from unchanged documents advanced
+  the date, making stale figures look current. **code bug** (violates the project's
+  own "publication ≠ capture date / don't re-stamp on re-parse" rule).
+  *Fix:* `meta.data_as_of` is now the newest source `as_of`; `meta.built_at` holds
+  the build timestamp separately; the UI shows `data_as_of`.
+
 ## Known limitations (not bugs)
 
 - **Time series depth.** The over-time view currently spans one biennium at two
