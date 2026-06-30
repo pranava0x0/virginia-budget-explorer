@@ -20,5 +20,7 @@ venv/
 # Keep them out of git; the manifest (URL + sha256) is the source of truth.
 sources/raw/*.pdf
 
-# Extracted intermediate text (regenerable via scripts/extract.py)
-data/text/
+# Human-readable paged dumps are regenerable; the .pages.json evidence (read by
+# the test suite to verify every quote/number) IS committed so the repo
+# self-verifies on a fresh clone.
+data/text/*.txt

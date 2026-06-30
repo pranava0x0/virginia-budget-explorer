@@ -1,0 +1,56 @@
+# Virginia Budget Explorer
+
+> Source-verified explorer of the Commonwealth of Virginia's general fund budget. Every figure is transcribed from official Virginia House Appropriations Committee documents and verified verbatim against its source page. By-area dollars are general fund. Data as of 2026-06-22.
+
+## Headline totals
+- FY2024-2026 (As adopted) GF spending: $63.7 billion — [Chapter 2 (2024), p. 8](https://budget.lis.virginia.gov/sessionreport/2024/2/2434/#page=8)
+- FY2024-2026 (As amended) GF spending: $67.4 billion — [Chapter 725 (2025), p. 9](https://budget.lis.virginia.gov/sessionreport/2025/1/2467/#page=9)
+- FY2026-2028 (As introduced) GF spending: $70.1 billion — [HB 30 (2026), p. 20](https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf#page=20)
+- FY2026-2028 (As introduced) GF resources: $71.9 billion — [HB 30 (2026), p. 17](https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf#page=17)
+
+## General fund spending by secretarial area (FY2024-2026, amended)
+- Health & Human Resources: $20.9B — [p. 9](https://budget.lis.virginia.gov/sessionreport/2025/1/2467/#page=9)
+- K-12 Education: $20.3B — [p. 9](https://budget.lis.virginia.gov/sessionreport/2025/1/2467/#page=9)
+- Higher Education: $7.5B — [p. 9](https://budget.lis.virginia.gov/sessionreport/2025/1/2467/#page=9)
+- Public Safety & Veterans: $5.5B — [p. 9](https://budget.lis.virginia.gov/sessionreport/2025/1/2467/#page=9)
+- Finance: $3.7B — [p. 9](https://budget.lis.virginia.gov/sessionreport/2025/1/2467/#page=9)
+- Administration & Central Accounts: $2.8B — [p. 9](https://budget.lis.virginia.gov/sessionreport/2025/1/2467/#page=9)
+- Judicial & Other: $2.5B — [p. 9](https://budget.lis.virginia.gov/sessionreport/2025/1/2467/#page=9)
+- Commerce, Labor, Natural Resources & Agriculture: $2.4B — [p. 9](https://budget.lis.virginia.gov/sessionreport/2025/1/2467/#page=9)
+- Debt Service: $2.0B — [p. 9](https://budget.lis.virginia.gov/sessionreport/2025/1/2467/#page=9)
+
+## Next year (FY2026-2028, HB 30) — key changes
+- [Overall] $2.5B more than the current budget: "Measured against Chapter 725 operating expenses, this represents an increase of $2.5 billion over the biennium" ([p. 20](https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf#page=20))
+- [Overall] $4.7B in net new spending: "HB 30, as introduced, includes a new amendments totaling a net of $4.7 billion of funding increases over the biennium" ([p. 22](https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf#page=22))
+- [Overall] K-12 and HHS still dominate: "continue to dominate total spending with 65% of spending directed to these areas of government" ([p. 21](https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf#page=21))
+- [K-12 Education] School construction grants nearly to $519M: "increasing the total grants available for the biennium from $360.0 million to $519.0 million" ([p. 24](https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf#page=24))
+- [Health & Human Resources] Children's health insurance funded: "Includes spending of $29.6 million in FY 2027 and $55.2 million in FY 2028 for the children's health insurance programs (FAMIS and M-CHIP)" ([p. 23](https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf#page=23))
+- [Health & Human Resources] DD Waiver rate increases: "to increase rates for certain DD Waiver services that were included in a rate study of services required pursuant to the Permanent Injunction" ([p. 23](https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf#page=23))
+- [Commerce, Labor, Natural Resources & Agriculture] $144.1M for water quality: "$144.1 million for the Water Quality Improvement Fund and Agriculture Cost-Share program" ([p. 21](https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf#page=21))
+- [Commerce, Labor, Natural Resources & Agriculture] $35M for biotech at UVA: "$35.0 million for the Institute for Biotechnology at UVA" ([p. 21](https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf#page=21))
+- [Commerce, Labor, Natural Resources & Agriculture] $43.5M for local stormwater: "Proposes $43.5 million GF in FY 2027 for deposit in the Stormwater Local Assistance Fund" ([p. 25](https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf#page=25))
+- [Public Safety & Veterans] More for inmate medical care: "Proposes an additional $28.9 million GF in FY 2027 and $30.8 million GF in FY 2028 to reflect increased estimated costs of providing medical care to inmates" ([p. 26](https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf#page=26))
+- [Public Safety & Veterans] New Cardinal Disaster Relief Fund: "Proposes the establishment of the Cardinal Disaster Relief Fund with the Department of Emergency Management" ([p. 26](https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf#page=26))
+
+## Policy quotes
+- [Spending priorities] "Spending in the areas of K-12 and Health and Human Resources represents 62% of the state's total biennial operational budget." — An Overview of Virginia's Biennial Budget FY 2024-2026, [p. 8](https://budget.lis.virginia.gov/sessionreport/2024/2/2434/#page=8)
+- [General Fund spending] "Chapter 2 includes general fund spending totaling $63.7 billion over the biennium with $31.8 billion in FY 2025 and $32.0 billion in FY 2026 in operating expenditures." — An Overview of Virginia's Biennial Budget FY 2024-2026, [p. 8](https://budget.lis.virginia.gov/sessionreport/2024/2/2434/#page=8)
+- [Health & Human Resources] "Children's Services Act (CSA) Forecast. Adds $37.0 million in FY 2025 and $63.3 million in FY 2026 for estimated caseload and cost increases in CSA." — Overview of Virginia's Budget for FY 2024-2026 (Chapter 725), [p. 9](https://budget.lis.virginia.gov/sessionreport/2025/1/2467/#page=9)
+- [Where the money goes] "51.1% of general fund appropriations are for K-12 and Medicaid" — Virginia in Focus: Budget and Outcomes for Core Government Areas, [p. 17](https://hac.virginia.gov/wp-content/uploads/2026/01/Virginia-In-Focus-PRINT.pdf#page=17)
+- [Concentration of spending] "The top 10 general fund appropriations total $24.4 billion, or 72.3% of the general fund budget" — Virginia in Focus: Budget and Outcomes for Core Government Areas, [p. 17](https://hac.virginia.gov/wp-content/uploads/2026/01/Virginia-In-Focus-PRINT.pdf#page=17)
+- [Where the money comes from] "The personal income tax provides about 63% of General Fund revenues" — Virginia in Focus: Budget and Outcomes for Core Government Areas, [p. 17](https://hac.virginia.gov/wp-content/uploads/2026/01/Virginia-In-Focus-PRINT.pdf#page=17)
+- [Data centers] "Conference Report includes Part 3 language - applicable for this biennium only - establishing a rate of $0.011/kWh of all electricity consumed at each data center per month" — HB 30 Conference Report (FY 2026-2028 Biennial Budget), [p. 5](https://hac.virginia.gov/wp-content/uploads/2026/06/Conference-Report-Summary-Presentation.pdf#page=5)
+- [Data centers] "Annual revenue collections are capped at $600 million per year" — HB 30 Conference Report (FY 2026-2028 Biennial Budget), [p. 5](https://hac.virginia.gov/wp-content/uploads/2026/06/Conference-Report-Summary-Presentation.pdf#page=5)
+- [Tax relief] "Reflects revenue reduction of $51.0 million in the first year and $120.0 million in the second year to reflect increasing the standard deduction" — HB 30 Conference Report (FY 2026-2028 Biennial Budget), [p. 6](https://hac.virginia.gov/wp-content/uploads/2026/06/Conference-Report-Summary-Presentation.pdf#page=6)
+- [Economy] "Unemployment has been rising in Virginia and its regions since the beginning of 2025 with statewide unemployment reaching 3.5% in September from 3% in January 2025." — Virginia in Focus: Budget and Outcomes for Core Government Areas, [p. 12](https://hac.virginia.gov/wp-content/uploads/2026/01/Virginia-In-Focus-PRINT.pdf#page=12)
+
+## Sources
+- [An Overview of Virginia's Biennial Budget FY 2024-2026](https://budget.lis.virginia.gov/sessionreport/2024/2/2434/) — House Appropriations Committee Staff, 100 pp, as of 2024-05-31
+- [Overview of Virginia's Budget for FY 2024-2026 (Chapter 725)](https://budget.lis.virginia.gov/sessionreport/2025/1/2467/) — House Appropriations Committee Staff, 79 pp, as of 2025-05-19
+- [An Overview of Virginia's Biennial Budget for FY 2026-2028 (HB 30, as introduced)](https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf) — House Appropriations Committee Staff, 107 pp, as of 2026-01-14
+- [HB 30 Conference Report (FY 2026-2028 Biennial Budget)](https://hac.virginia.gov/wp-content/uploads/2026/06/Conference-Report-Summary-Presentation.pdf) — House Appropriations Committee Staff, 68 pp, as of 2026-06-22
+- [Virginia in Focus: Budget and Outcomes for Core Government Areas](https://hac.virginia.gov/wp-content/uploads/2026/01/Virginia-In-Focus-PRINT.pdf) — House Appropriations Committee Staff, 81 pp, as of 2026-01-15
+
+## Data
+- [Machine-readable dataset](data/budget.json)
+- [Per-data-point verification report](data/validation.json) — 76 figures and quotes checked against source
