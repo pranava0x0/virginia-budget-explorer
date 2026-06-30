@@ -7,15 +7,15 @@
 // ---- single source of truth for area colors ----
 const THEME = {
   areaColors: {
-    "Health & Human Resources": "#1877f2",
-    "K-12 Education": "#42b72a",
-    "Higher Education": "#8b5cf6",
-    "Public Safety & Veterans": "#f7931e",
-    "Finance": "#00a4bd",
-    "Debt Service": "#8a8d91",
-    "Commerce, Labor, Natural Resources & Agriculture": "#13c2c2",
-    "Administration & Central Accounts": "#eab308",
-    "Judicial & Other": "#ec4899",
+    "Health & Human Resources": "#0064e0",
+    "K-12 Education": "#1d9b46",
+    "Higher Education": "#7c4dff",
+    "Public Safety & Veterans": "#f5871f",
+    "Finance": "#0098b3",
+    "Debt Service": "#8a96a3",
+    "Commerce, Labor, Natural Resources & Agriculture": "#12b2b8",
+    "Administration & Central Accounts": "#e0a800",
+    "Judicial & Other": "#e84393",
   },
   fallback: "#65676b",
 };
@@ -84,10 +84,10 @@ let pinnedArea = null, trendPinned = null;
 
 const TABS = [
   { id: "overview", label: "Overview" },
-  { id: "trends", label: "Over time" },
+  { id: "trends", label: "Trends" },
   { id: "funding", label: "Funding" },
   { id: "nextyear", label: "Next year" },
-  { id: "sources", label: "Quotes & sources" },
+  { id: "sources", label: "Sources" },
 ];
 
 // ---- boot ----
@@ -148,20 +148,36 @@ function timePoints() {
 }
 
 // ---- shell (hero + tabs) ----
+function selectTab(id, focus) {
+  activeTab = id;
+  renderShell();
+  if (focus) { const b = document.getElementById("tab-" + id); if (b) b.focus(); }
+}
+function onTabKey(e) {
+  const i = TABS.findIndex((t) => t.id === activeTab);
+  let j = null;
+  if (e.key === "ArrowRight" || e.key === "ArrowDown") j = (i + 1) % TABS.length;
+  else if (e.key === "ArrowLeft" || e.key === "ArrowUp") j = (i - 1 + TABS.length) % TABS.length;
+  else if (e.key === "Home") j = 0;
+  else if (e.key === "End") j = TABS.length - 1;
+  if (j !== null) { e.preventDefault(); selectTab(TABS[j].id, true); }
+}
 function renderShell() {
   const root = $("#app");
   root.innerHTML = "";
   root.appendChild(heroBlock());
-  const tabbar = el("div", { class: "tabbar", role: "tablist", "aria-label": "Budget views" });
+  const tabbar = el("div", { class: "tabbar", role: "tablist", "aria-label": "Budget views", onkeydown: onTabKey });
   TABS.forEach((t) => {
+    const on = activeTab === t.id;
     tabbar.appendChild(el("button", {
-      class: "tab" + (activeTab === t.id ? " active" : ""), type: "button", role: "tab",
-      "aria-selected": String(activeTab === t.id), id: "tab-" + t.id,
-      onclick: () => { activeTab = t.id; renderShell(); },
+      class: "tab" + (on ? " active" : ""), type: "button", role: "tab", id: "tab-" + t.id,
+      "aria-selected": String(on), "aria-controls": "panel-" + t.id, tabindex: on ? "0" : "-1",
+      onclick: () => selectTab(t.id, false),
     }, [t.label]));
   });
   root.appendChild(el("div", { class: "wrap" }, [tabbar]));
-  const content = el("div", { class: "tab-content", role: "tabpanel", "aria-labelledby": "tab-" + activeTab });
+  const content = el("div", { class: "tab-content", role: "tabpanel", id: "panel-" + activeTab,
+    "aria-labelledby": "tab-" + activeTab, tabindex: "0" });
   root.appendChild(content);
   pinnedArea = null; trendPinned = null;
   ({ overview: tabOverview, trends: tabTrends, funding: tabFunding,
@@ -177,7 +193,7 @@ function heroBlock() {
     text: "A plain-language look at the Commonwealth's general fund budget — every figure traced to an official House Appropriations Committee document, down to the page." }));
   if (VALIDATION) {
     sec.appendChild(el("div", { class: "verified-banner", title: "Checked by scripts/validate.py" }, [
-      el("span", { class: "vcheck", text: "✓" }),
+      el("span", { class: "vcheck", "aria-hidden": "true", text: "✓" }),
       el("span", { html: null, text: `All ${VALIDATION.passed} of ${VALIDATION.total} figures and quotes verified against their source page` }),
       el("span", { class: "vdate", text: "· checked " + VALIDATION.validated_on }),
     ]));
@@ -334,8 +350,10 @@ function overviewTableSection(rows) {
     el("td", { class: "num delta up", text: "▲ " + fmtM(amendedTot - adoptedTot) }),
     el("td", { class: "num", text: "100%" }), el("td", {}, [""]),
   ])]);
+  const caption = el("caption", { class: "visually-hidden",
+    text: "General fund spending by secretarial area for FY2024-2026, comparing the adopted and amended budgets, in billions of dollars." });
   sec.appendChild(el("div", { class: "panel" }, [el("div", { class: "table-scroll" },
-    [el("table", { class: "budget" }, [thead, tbody, tfoot])])]));
+    [el("table", { class: "budget overview-cols" }, [caption, thead, tbody, tfoot])])]));
   return sec;
 }
 function setSort(key) { if (sortKey === key) sortDir *= -1; else { sortKey = key; sortDir = key === "area" ? 1 : -1; } renderShell(); }
@@ -501,8 +519,10 @@ function tabNextYear(root) {
   ])]);
   const thead = el("thead", {}, [el("tr", {}, ["Area", "Current (amended)", "Proposed (HB 30)", "Change", "Source"]
     .map((h) => el("th", { scope: "col", text: h })))]);
+  const caption = el("caption", { class: "visually-hidden",
+    text: "FY2026-2028 proposed general fund by secretarial area compared with the current amended budget, in billions of dollars." });
   sec.appendChild(el("div", { class: "panel" }, [el("div", { class: "table-scroll" },
-    [el("table", { class: "budget" }, [thead, tbody, tfoot])])]));
+    [el("table", { class: "budget nextyear-cols" }, [caption, thead, tbody, tfoot])])]));
   root.appendChild(sec);
 
   // key changes, grouped — each verbatim with a page citation
@@ -554,7 +574,7 @@ function tabSources(root) {
   const sec2 = el("section", { class: "wrap" });
   sec2.appendChild(sectionHead("Sources", "Official documents behind every number", ""));
   if (VALIDATION) sec2.appendChild(el("div", { class: "verified-banner inline" }, [
-    el("span", { class: "vcheck", text: "✓" }),
+    el("span", { class: "vcheck", "aria-hidden": "true", text: "✓" }),
     el("span", { text: `${VALIDATION.passed}/${VALIDATION.total} data points verified against source (checked ${VALIDATION.validated_on}). Run scripts/validate.py to re-check.` }),
   ]));
   const grid = el("div", { class: "src-grid" });

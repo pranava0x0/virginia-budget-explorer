@@ -153,6 +153,23 @@ class TestProvenance(unittest.TestCase):
         _check_host("https://budget.lis.virginia.gov/sessionreport/2024/2/2434/")  # no raise
 
 
+class TestLlmsTxt(unittest.TestCase):
+    """docs/llms.txt must stay in sync with budget.json (generated output)."""
+    def test_in_sync_with_data(self):
+        from build_data import render_llms
+        path = ROOT / "docs" / "llms.txt"
+        self.assertTrue(path.exists(), "run scripts/build_data.py to generate llms.txt")
+        expected = render_llms(BUDGET)
+        self.assertEqual(path.read_text(encoding="utf-8"), expected,
+                         "llms.txt is stale; re-run scripts/build_data.py")
+
+    def test_has_key_sections(self):
+        text = (ROOT / "docs" / "llms.txt").read_text(encoding="utf-8")
+        for marker in ("# Virginia Budget Explorer", "## Headline totals",
+                       "## Next year", "## Sources", "data/budget.json"):
+            self.assertIn(marker, text)
+
+
 class TestValidationArtifact(unittest.TestCase):
     """The shipped validation.json must exist and report all points passing."""
     def test_validation_all_passed(self):
