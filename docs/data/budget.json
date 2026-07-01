@@ -3,9 +3,9 @@
     "title": "Virginia Budget Explorer",
     "subtitle": "Where Virginia's money comes from and where it goes",
     "data_as_of": "2026-06-22",
-    "built_at": "2026-06-30",
+    "built_at": "2026-07-01",
     "checks_passed": 85,
-    "note": "Figures transcribed from official House Appropriations Committee documents and verified verbatim against the source page. By-area dollars are General Fund."
+    "note": "Figures transcribed from official House Appropriations Committee and Department of Planning and Budget documents, verified verbatim against the source page. By-area dollars are General Fund."
   },
   "areas": [
     "Health & Human Resources",

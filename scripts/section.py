@@ -51,6 +51,11 @@ def sections_for(stem: str) -> list[dict]:
     sections = []
     for i, (title, start) in enumerate(headers):
         end = headers[i + 1][1] - 1 if i + 1 < len(headers) else doc.page_count
+        if end < start:
+            # two level-2 bookmarks landed on the same page (a short blurb and
+            # its table both bookmarked at page P) -- collapse to a 1-page
+            # section instead of emitting an inverted, silently-empty range.
+            end = start
         sections.append({
             "index": i, "part": part_for(start), "title": title,
             "start_page": start, "end_page": end, "source_stem": stem,

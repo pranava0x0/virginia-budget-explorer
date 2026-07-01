@@ -11,6 +11,7 @@ sneaks off the allowlist, a test fails loudly.
 from __future__ import annotations
 
 import json
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -168,6 +169,30 @@ class TestLlmsTxt(unittest.TestCase):
         for marker in ("# Virginia Budget Explorer", "## Headline totals",
                        "## Next year", "## Sources", "data/budget.json"):
             self.assertIn(marker, text)
+
+
+class TestAppJs(unittest.TestCase):
+    """docs/app.js has no test runner (vanilla JS, no build step) but its
+    DOC_SHORT citation-label map is a hardcoded duplicate of the source_stem
+    values shipped in budget.json -- catch drift from Python instead, since
+    this repo's only test coverage is the Python suite. A stem missing from
+    DOC_SHORT renders "undefined" in every citation link for that source
+    (e.g. "Open undefined at page 46") with no error, just a silently broken
+    citation -- exactly what shipped before this test existed."""
+
+    def test_doc_short_covers_every_shipped_source_stem(self):
+        app_js = (ROOT / "docs" / "app.js").read_text(encoding="utf-8")
+        m = re.search(r"const DOC_SHORT = \{(.*?)\};", app_js, re.DOTALL)
+        self.assertIsNotNone(m, "DOC_SHORT map not found in docs/app.js")
+        doc_short_stems = set(re.findall(r'"([^"]+)":', m.group(1)))
+
+        used_stems = {s["stem"] for s in BUDGET["sources"]}
+        used_stems |= {r["source_stem"] for r in BUDGET["by_area"]}
+        used_stems |= {r["source_stem"] for r in BUDGET["quotes"]}
+        used_stems |= {c["source_stem"] for c in BUDGET.get("next_year_changes", [])}
+
+        missing = used_stems - doc_short_stems
+        self.assertFalse(missing, f"DOC_SHORT in docs/app.js is missing stem(s): {missing}")
 
 
 class TestValidationArtifact(unittest.TestCase):
