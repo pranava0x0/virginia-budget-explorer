@@ -24,6 +24,7 @@ REQUEST_SPACING_SECONDS = 2.0  # >= 1.5s between requests to one host
 ALLOWED_HOSTS = {
     "budget.lis.virginia.gov",
     "hac.virginia.gov",
+    "dpb.virginia.gov",
 }
 
 # --- Source documents ------------------------------------------------------
@@ -85,6 +86,17 @@ SOURCES = [
         "biennium": "FY2024-2026",
         "stage": "reference",
         "as_of": "2026-01-15",
+    },
+    {
+        "stem": "executive_budget_doc_2026",
+        "url": "https://dpb.virginia.gov/budget/buddoc26/BudgetDocument.pdf",
+        "title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act",
+        "publisher": "Virginia Department of Planning and Budget",
+        "session": "2026 Session",
+        "enactment": "HB 30, as introduced",
+        "biennium": "FY2026-2028",
+        "stage": "as introduced",
+        "as_of": "2025-12-17",
     },
 ]
 
