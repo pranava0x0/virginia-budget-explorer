@@ -44,6 +44,30 @@ Living audit trail. Each entry: date · area · description · root cause · sta
   *Fix:* `meta.data_as_of` is now the newest source `as_of`; `meta.built_at` holds
   the build timestamp separately; the UI shows `data_as_of`.
 
+- **2026-07-01 · quote miner · `find_quotes.py` scanned less than half the document (Codex-style self-review).**
+  `mine()` only walked the 16 named Part B office sections, skipping
+  `OperatingBudgetSummaryTables` (assumed to be "just tables") and every Part D
+  section, then additionally truncated each scanned section to its top 8
+  candidates by dollar magnitude. Auditing marker counts directly against the
+  extracted page text (`"Introduced Budget Non-Technical Changes".count(...)`)
+  showed 264 such zones in the document but only 117 were ever scanned — the
+  appendix alone held 101 (a per-agency restatement of the same office-level
+  changes at finer grain) and Part D's "Caboose" sections held 46 more, which
+  turned out to be a *distinct* budget action (amendments to the current
+  FY2024-2026 biennium, bundled in the same PDF, not the FY2026-2028 budget the
+  rest of the document covers). **Root cause:** a title-based allowlist that
+  encoded an untested assumption about which sections contain narrative
+  content, plus a hard per-section cap with no way to recover what it dropped.
+  *Fix:* scan every section (skip only single-page `IntroCover_*` covers) and
+  let the zone-detection naturally yield zero candidates where there's nothing
+  to find; drop the cap entirely and store every candidate with a
+  `rank_in_section` for reviewer convenience instead of truncating. Candidate
+  count went from 107 (silently capped from an unknown, unrecorded larger set)
+  to 324 (the complete, auditable set). Regression test:
+  `tests/test_find_quotes.py`. Also fixed `.gitignore`: `*.sections.json` was
+  wrongly marked "regenerable from committed data" — it actually depends on the
+  raw PDF's bookmarks (gitignored), so it needed to be committed, not ignored.
+
 ## Known limitations (not bugs)
 
 - **Time series depth.** The over-time view currently spans one biennium at two

@@ -24,3 +24,12 @@ sources/raw/*.pdf
 # the test suite to verify every quote/number) IS committed so the repo
 # self-verifies on a fresh clone.
 data/text/*.txt
+
+# Candidate-quote triage output (scripts/find_quotes.py) is a scratch review
+# queue for picking quotes into build_data.py -- cheaply regenerable from the
+# committed .pages.json + .sections.json and not read by the build or tests.
+# *.sections.json is NOT ignored: it comes from the raw PDF's bookmarks
+# (scripts/section.py), which aren't preserved anywhere else in the repo since
+# sources/raw/*.pdf itself is gitignored -- without committing it, a fresh
+# checkout couldn't regenerate it without re-downloading the PDF.
+data/derived/*.candidate_quotes.json
