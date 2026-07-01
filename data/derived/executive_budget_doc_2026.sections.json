@@ -1,0 +1,274 @@
+[
+  {
+    "index": 0,
+    "part": "PartA_ALL",
+    "title": "IntroCover_PartA",
+    "start_page": 2,
+    "end_page": 2,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 1,
+    "part": "PartA_ALL",
+    "title": "Virginia'sBudget",
+    "start_page": 3,
+    "end_page": 3,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 2,
+    "part": "PartA_ALL",
+    "title": "ReadersGuide",
+    "start_page": 4,
+    "end_page": 6,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 3,
+    "part": "PartA_ALL",
+    "title": "EconomicForecast",
+    "start_page": 7,
+    "end_page": 9,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 4,
+    "part": "PartA_ALL",
+    "title": "RevenueForecast",
+    "start_page": 10,
+    "end_page": 14,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 5,
+    "part": "PartB_ALL",
+    "title": "IntroCover_PartB",
+    "start_page": 15,
+    "end_page": 15,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 6,
+    "part": "PartB_ALL",
+    "title": "01_LegislativeDepartment",
+    "start_page": 16,
+    "end_page": 42,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 7,
+    "part": "PartB_ALL",
+    "title": "02_JudicialDepartment",
+    "start_page": 43,
+    "end_page": 59,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 8,
+    "part": "PartB_ALL",
+    "title": "03_ExecutiveOffices",
+    "start_page": 60,
+    "end_page": 70,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 9,
+    "part": "PartB_ALL",
+    "title": "04_OfficeofAdministration",
+    "start_page": 71,
+    "end_page": 85,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 10,
+    "part": "PartB_ALL",
+    "title": "05_OfficeofAgricultureandForestry",
+    "start_page": 86,
+    "end_page": 95,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 11,
+    "part": "PartB_ALL",
+    "title": "06_OfficeofCommerceandTrade",
+    "start_page": 96,
+    "end_page": 109,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 12,
+    "part": "PartB_ALL",
+    "title": "07_OfficeofEducation",
+    "start_page": 110,
+    "end_page": 186,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 13,
+    "part": "PartB_ALL",
+    "title": "08_OfficeofFinance",
+    "start_page": 187,
+    "end_page": 201,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 14,
+    "part": "PartB_ALL",
+    "title": "09_OfficeofHealthandHumanResources",
+    "start_page": 202,
+    "end_page": 238,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 15,
+    "part": "PartB_ALL",
+    "title": "10_OfficeofLabor",
+    "start_page": 239,
+    "end_page": 247,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 16,
+    "part": "PartB_ALL",
+    "title": "11_OfficeofNaturalandHistoricResources",
+    "start_page": 248,
+    "end_page": 261,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 17,
+    "part": "PartB_ALL",
+    "title": "12_OfficeofPublicSafetyandHomelandSecurity",
+    "start_page": 262,
+    "end_page": 281,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 18,
+    "part": "PartB_ALL",
+    "title": "13_OfficeofTransportation",
+    "start_page": 282,
+    "end_page": 299,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 19,
+    "part": "PartB_ALL",
+    "title": "14_OfficeofVeteransandDefenseAffairs",
+    "start_page": 300,
+    "end_page": 309,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 20,
+    "part": "PartB_ALL",
+    "title": "15_CentralAppropriations",
+    "start_page": 310,
+    "end_page": 317,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 21,
+    "part": "PartB_ALL",
+    "title": "16_IndependentAgencies",
+    "start_page": 318,
+    "end_page": 331,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 22,
+    "part": "PartB_ALL",
+    "title": "OperatingBudgetSummaryTables",
+    "start_page": 332,
+    "end_page": 547,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 23,
+    "part": "PartB_ALL",
+    "title": "CapitalOutlayBudgetSummaryTables",
+    "start_page": 548,
+    "end_page": 550,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 24,
+    "part": "PartC_All",
+    "title": "IntroCover_PartC",
+    "start_page": 551,
+    "end_page": 551,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 25,
+    "part": "PartC_All",
+    "title": "Aid to Localities",
+    "start_page": 552,
+    "end_page": 559,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 26,
+    "part": "PartC_All",
+    "title": "MiscellaneousTransfers",
+    "start_page": 560,
+    "end_page": 561,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 27,
+    "part": "PartC_All",
+    "title": "SupplmentalInformation",
+    "start_page": 562,
+    "end_page": 562,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 28,
+    "part": "PartC_All",
+    "title": "BiennialReportCoordinationofWorkforceDevelopment",
+    "start_page": 563,
+    "end_page": 584,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 29,
+    "part": "PartD_ALL",
+    "title": "IntroCover_PartD",
+    "start_page": 585,
+    "end_page": 585,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 30,
+    "part": "PartD_ALL",
+    "title": "CabooseBullets",
+    "start_page": 586,
+    "end_page": 596,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 31,
+    "part": "PartD_ALL",
+    "title": "CabooseOperatingBudgetSummaryTables",
+    "start_page": 597,
+    "end_page": 646,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 32,
+    "part": "PartD_ALL",
+    "title": "CabooseCapitalOutlayBudgetSummaryTable",
+    "start_page": 647,
+    "end_page": 650,
+    "source_stem": "executive_budget_doc_2026"
+  },
+  {
+    "index": 33,
+    "part": "PartD_ALL",
+    "title": "MiscellaneousTransfers_Caboose",
+    "start_page": 651,
+    "end_page": 651,
+    "source_stem": "executive_budget_doc_2026"
+  }
+]

@@ -3,9 +3,9 @@
     "title": "Virginia Budget Explorer",
     "subtitle": "Where Virginia's money comes from and where it goes",
     "data_as_of": "2026-06-22",
-    "built_at": "2026-06-30",
-    "checks_passed": 76,
-    "note": "Figures transcribed from official House Appropriations Committee documents and verified verbatim against the source page. By-area dollars are General Fund."
+    "built_at": "2026-07-01",
+    "checks_passed": 85,
+    "note": "Figures transcribed from official House Appropriations Committee and Department of Planning and Budget documents, verified verbatim against the source page. By-area dollars are General Fund."
   },
   "areas": [
     "Health & Human Resources",
@@ -760,6 +760,78 @@
       "source_stem": "overview_2026_fy2026-2028",
       "page": 26,
       "doc_title": "An Overview of Virginia's Biennial Budget for FY 2026-2028 (HB 30, as introduced)"
+    },
+    {
+      "area": "Judicial",
+      "headline": "Expand judicial video conferencing infrastructure",
+      "text": "Provides positions and funding to support the implementation and long-term maintenance of courtroom video conferencing technology infrastructure across the Commonwealth.",
+      "source_stem": "executive_budget_doc_2026",
+      "page": 46,
+      "doc_title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act"
+    },
+    {
+      "area": "Executive Offices",
+      "headline": "New staff for the Children's Ombudsman",
+      "text": "Provides funding and two positions for a data analyst and a deputy director for the Office of the Children's Ombudsman.",
+      "source_stem": "executive_budget_doc_2026",
+      "page": 63,
+      "doc_title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act"
+    },
+    {
+      "area": "Commerce, Labor, Natural Resources & Agriculture",
+      "headline": "Expanded hemp enforcement",
+      "text": "Appropriates nongeneral funds to expand the department’s hemp enforcement activities. It is anticipated that the department will hire additional inspector and compliance positions, implement a product sampling program, and work more closely with local law enforcement to investigate and prosecute violations of Virginia law.",
+      "source_stem": "executive_budget_doc_2026",
+      "page": 91,
+      "doc_title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act"
+    },
+    {
+      "area": "K-12 Education",
+      "headline": "$299M more for school construction grants",
+      "text": "In total, $299.0 million of additional state support is provided for grants to local school boards to support the construction, expansion, or modernization of public school buildings.",
+      "source_stem": "executive_budget_doc_2026",
+      "page": 118,
+      "doc_title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act"
+    },
+    {
+      "area": "Health & Human Resources",
+      "headline": "Ends automatic inflation for Medicaid providers",
+      "text": "Eliminates the automatic inflation adjustments that would have been provided for hospitals, freestanding psychiatric facilities, disproportionate share hospitals payments, graduate medical education payments, nursing facilities, and any other provider rates for fiscal years 2027 and 2028.",
+      "source_stem": "executive_budget_doc_2026",
+      "page": 216,
+      "doc_title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act"
+    },
+    {
+      "area": "Commerce, Labor, Natural Resources & Agriculture",
+      "headline": "Hampton Roads nutrient removal funding",
+      "text": "Provides funding to complete support for the Hampton Roads Sanitation District Boat Harbor Treatment Plant project through the Enhanced Nutrient Removal Certainty program.",
+      "source_stem": "executive_budget_doc_2026",
+      "page": 255,
+      "doc_title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act"
+    },
+    {
+      "area": "Public Safety & Veterans",
+      "headline": "More support for State Police operations",
+      "text": "Provides additional general fund support to cover increased personnel and equipment costs.",
+      "source_stem": "executive_budget_doc_2026",
+      "page": 279,
+      "doc_title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act"
+    },
+    {
+      "area": "Transportation",
+      "headline": "Port Authority terminal expansion",
+      "text": "Provides additional nongeneral fund appropriation to continue efforts required to keep facilities operating at optimum efficiency especially during construction elsewhere on the port terminals.",
+      "source_stem": "executive_budget_doc_2026",
+      "page": 299,
+      "doc_title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act"
+    },
+    {
+      "area": "Administration & Central Accounts",
+      "headline": "New 2026 capital construction pool",
+      "text": "Provides funding for the construction or acquisition of capital projects at agencies and institutions of higher education. Funding for 15 projects is pooled together centrally and subject to the capital pool process in Section 2.2-1515 et. seq, Code of Virginia.",
+      "source_stem": "executive_budget_doc_2026",
+      "page": 317,
+      "doc_title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act"
     }
   ],
   "sources": [
@@ -775,7 +847,7 @@
       "bytes": 1744970,
       "page_count": 100,
       "sha256": "a47decbea02f10129339cdb80969c602b9943171a899aa35b7526c218e8183fe",
-      "http_status": null,
+      "http_status": 200,
       "captured_at": "2026-06-30"
     },
     {
@@ -790,7 +862,7 @@
       "bytes": 1945138,
       "page_count": 79,
       "sha256": "24382a52d86dadbc2e3cd52d593df85acbb243404275a0a6f15ee8acf78f92ff",
-      "http_status": null,
+      "http_status": 200,
       "captured_at": "2026-06-30"
     },
     {
@@ -805,7 +877,7 @@
       "bytes": 6975059,
       "page_count": 107,
       "sha256": "18b5b1332dc4f3d160f0d70ef3830f710b7ef988e78372adc69383e585ff3c5d",
-      "http_status": null,
+      "http_status": 200,
       "captured_at": "2026-06-30"
     },
     {
@@ -820,7 +892,7 @@
       "bytes": 512933,
       "page_count": 68,
       "sha256": "30c4355a8042449be2901ae6bc22eb66a7e9dca75ccb9a1a3ab67d4dd13a90ab",
-      "http_status": null,
+      "http_status": 200,
       "captured_at": "2026-06-30"
     },
     {
@@ -835,7 +907,22 @@
       "bytes": 15642642,
       "page_count": 81,
       "sha256": "18e73b84517865e97a3550c23e9db4f95fce64bf1113441cdcb69254ccd68aec",
-      "http_status": null,
+      "http_status": 200,
+      "captured_at": "2026-06-30"
+    },
+    {
+      "stem": "executive_budget_doc_2026",
+      "url": "https://dpb.virginia.gov/budget/buddoc26/BudgetDocument.pdf",
+      "title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act",
+      "publisher": "Virginia Department of Planning and Budget",
+      "enactment": "HB 30, as introduced",
+      "biennium": "FY2026-2028",
+      "stage": "as introduced",
+      "as_of": "2025-12-17",
+      "bytes": 7163812,
+      "page_count": 651,
+      "sha256": "34b893e6b0e353d6005d4ee3008e47e419741cf9e9c17aa05ba8c521e140a6e9",
+      "http_status": 200,
       "captured_at": "2026-06-30"
     }
   ]

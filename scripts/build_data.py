@@ -178,33 +178,56 @@ QUOTES = [
 ]
 
 # Key deltas/changes in the NEXT biennium (FY2026-2028, HB 30 as introduced).
-# Each entry: (page, area, headline, verbatim_excerpt). The text is verified on
-# its page; `headline` is our short framing of the change.
+# Each entry: (stem, page, area, headline, verbatim_excerpt). The text is
+# verified on its page; `headline` is our short framing of the change. The
+# first batch is transcribed from the HAC committee overview (a 107-page
+# summary); the second batch is mined from the primary ~700-page DPB executive
+# budget document itself -- see scripts/section.py + scripts/find_quotes.py,
+# whose candidates were hand-picked and verified here.
+_OVERVIEW = "overview_2026_fy2026-2028"
+_EXEC_DOC = "executive_budget_doc_2026"
 NEXT_YEAR = [
-    (20, "Overall", "$2.5B more than the current budget",
+    (_OVERVIEW, 20, "Overall", "$2.5B more than the current budget",
      "Measured against Chapter 725 operating expenses, this represents an increase of $2.5 billion over the biennium"),
-    (22, "Overall", "$4.7B in net new spending",
+    (_OVERVIEW, 22, "Overall", "$4.7B in net new spending",
      "HB 30, as introduced, includes a new amendments totaling a net of $4.7 billion of funding increases over the biennium"),
-    (21, "Overall", "K-12 and HHS still dominate",
+    (_OVERVIEW, 21, "Overall", "K-12 and HHS still dominate",
      "continue to dominate total spending with 65% of spending directed to these areas of government"),
-    (24, "K-12 Education", "School construction grants nearly to $519M",
+    (_OVERVIEW, 24, "K-12 Education", "School construction grants nearly to $519M",
      "increasing the total grants available for the biennium from $360.0 million to $519.0 million"),
-    (23, "Health & Human Resources", "Children's health insurance funded",
+    (_OVERVIEW, 23, "Health & Human Resources", "Children's health insurance funded",
      "Includes spending of $29.6 million in FY 2027 and $55.2 million in FY 2028 for the children's health insurance programs (FAMIS and M-CHIP)"),
-    (23, "Health & Human Resources", "DD Waiver rate increases",
+    (_OVERVIEW, 23, "Health & Human Resources", "DD Waiver rate increases",
      "to increase rates for certain DD Waiver services that were included in a rate study of services required pursuant to the Permanent Injunction"),
-    (21, "Commerce, Labor, Natural Resources & Agriculture", "$144.1M for water quality",
+    (_OVERVIEW, 21, "Commerce, Labor, Natural Resources & Agriculture", "$144.1M for water quality",
      "$144.1 million for the Water Quality Improvement Fund and Agriculture Cost-Share program"),
-    (21, "Commerce, Labor, Natural Resources & Agriculture", "$35M for biotech at UVA",
+    (_OVERVIEW, 21, "Commerce, Labor, Natural Resources & Agriculture", "$35M for biotech at UVA",
      "$35.0 million for the Institute for Biotechnology at UVA"),
-    (25, "Commerce, Labor, Natural Resources & Agriculture", "$43.5M for local stormwater",
+    (_OVERVIEW, 25, "Commerce, Labor, Natural Resources & Agriculture", "$43.5M for local stormwater",
      "Proposes $43.5 million GF in FY 2027 for deposit in the Stormwater Local Assistance Fund"),
-    (26, "Public Safety & Veterans", "More for inmate medical care",
+    (_OVERVIEW, 26, "Public Safety & Veterans", "More for inmate medical care",
      "Proposes an additional $28.9 million GF in FY 2027 and $30.8 million GF in FY 2028 to reflect increased estimated costs of providing medical care to inmates"),
-    (26, "Public Safety & Veterans", "New Cardinal Disaster Relief Fund",
+    (_OVERVIEW, 26, "Public Safety & Veterans", "New Cardinal Disaster Relief Fund",
      "Proposes the establishment of the Cardinal Disaster Relief Fund with the Department of Emergency Management"),
+    (_EXEC_DOC, 46, "Judicial", "Expand judicial video conferencing infrastructure",
+     "Provides positions and funding to support the implementation and long-term maintenance of courtroom video conferencing technology infrastructure across the Commonwealth."),
+    (_EXEC_DOC, 63, "Executive Offices", "New staff for the Children's Ombudsman",
+     "Provides funding and two positions for a data analyst and a deputy director for the Office of the Children's Ombudsman."),
+    (_EXEC_DOC, 91, "Commerce, Labor, Natural Resources & Agriculture", "Expanded hemp enforcement",
+     "Appropriates nongeneral funds to expand the department’s hemp enforcement activities. It is anticipated that the department will hire additional inspector and compliance positions, implement a product sampling program, and work more closely with local law enforcement to investigate and prosecute violations of Virginia law."),
+    (_EXEC_DOC, 118, "K-12 Education", "$299M more for school construction grants",
+     "In total, $299.0 million of additional state support is provided for grants to local school boards to support the construction, expansion, or modernization of public school buildings."),
+    (_EXEC_DOC, 216, "Health & Human Resources", "Ends automatic inflation for Medicaid providers",
+     "Eliminates the automatic inflation adjustments that would have been provided for hospitals, freestanding psychiatric facilities, disproportionate share hospitals payments, graduate medical education payments, nursing facilities, and any other provider rates for fiscal years 2027 and 2028."),
+    (_EXEC_DOC, 255, "Commerce, Labor, Natural Resources & Agriculture", "Hampton Roads nutrient removal funding",
+     "Provides funding to complete support for the Hampton Roads Sanitation District Boat Harbor Treatment Plant project through the Enhanced Nutrient Removal Certainty program."),
+    (_EXEC_DOC, 279, "Public Safety & Veterans", "More support for State Police operations",
+     "Provides additional general fund support to cover increased personnel and equipment costs."),
+    (_EXEC_DOC, 299, "Transportation", "Port Authority terminal expansion",
+     "Provides additional nongeneral fund appropriation to continue efforts required to keep facilities operating at optimum efficiency especially during construction elsewhere on the port terminals."),
+    (_EXEC_DOC, 317, "Administration & Central Accounts", "New 2026 capital construction pool",
+     "Provides funding for the construction or acquisition of capital projects at agencies and institutions of higher education. Funding for 15 projects is pooled together centrally and subject to the capital pool process in Section 2.2-1515 et. seq, Code of Virginia."),
 ]
-NEXT_YEAR_STEM = "overview_2026_fy2026-2028"
 
 
 # --- verification helpers --------------------------------------------------
@@ -306,13 +329,16 @@ def build() -> dict:
                        "doc_title": manifest[stem]["title"],
                        "as_of": manifest[stem]["as_of"]})
 
-    # next-year (FY2026-2028) key changes, verbatim-verified on their page
+    # next-year (FY2026-2028) key changes, verbatim-verified on their page.
+    # 5-tuple (stem, page, area, headline, text) -- a stray 4-tuple copied from
+    # before per-entry stems were added raises here with an "expected 5, got 4"
+    # unpacking error naming the exact NEXT_YEAR list to check.
     next_year = []
-    for page, area, headline, text in NEXT_YEAR:
-        assert_on_page(NEXT_YEAR_STEM, page, text, "next-year change"); checks += 1
+    for stem, page, area, headline, text in NEXT_YEAR:
+        assert_on_page(stem, page, text, "next-year change"); checks += 1
         next_year.append({"area": area, "headline": headline, "text": text,
-                          "source_stem": NEXT_YEAR_STEM, "page": page,
-                          "doc_title": manifest[NEXT_YEAR_STEM]["title"]})
+                          "source_stem": stem, "page": page,
+                          "doc_title": manifest[stem]["title"]})
 
     # display order: areas descending by amended (Ch.725) spending
     amended = {r["area"]: r["millions"] for r in by_area if r["stage"] == "As amended"}
@@ -330,8 +356,9 @@ def build() -> dict:
             "built_at": date.today().isoformat(),
             "checks_passed": checks,
             "note": ("Figures transcribed from official House Appropriations "
-                     "Committee documents and verified verbatim against the "
-                     "source page. By-area dollars are General Fund."),
+                     "Committee and Department of Planning and Budget documents, "
+                     "verified verbatim against the source page. By-area dollars "
+                     "are General Fund."),
         },
         "areas": area_order,
         "by_area": by_area,

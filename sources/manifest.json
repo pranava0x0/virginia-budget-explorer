@@ -11,7 +11,7 @@
     "bytes": 1744970,
     "page_count": 100,
     "sha256": "a47decbea02f10129339cdb80969c602b9943171a899aa35b7526c218e8183fe",
-    "http_status": null,
+    "http_status": 200,
     "captured_at": "2026-06-30"
   },
   {
@@ -26,7 +26,7 @@
     "bytes": 1945138,
     "page_count": 79,
     "sha256": "24382a52d86dadbc2e3cd52d593df85acbb243404275a0a6f15ee8acf78f92ff",
-    "http_status": null,
+    "http_status": 200,
     "captured_at": "2026-06-30"
   },
   {
@@ -41,7 +41,7 @@
     "bytes": 6975059,
     "page_count": 107,
     "sha256": "18b5b1332dc4f3d160f0d70ef3830f710b7ef988e78372adc69383e585ff3c5d",
-    "http_status": null,
+    "http_status": 200,
     "captured_at": "2026-06-30"
   },
   {
@@ -56,7 +56,7 @@
     "bytes": 512933,
     "page_count": 68,
     "sha256": "30c4355a8042449be2901ae6bc22eb66a7e9dca75ccb9a1a3ab67d4dd13a90ab",
-    "http_status": null,
+    "http_status": 200,
     "captured_at": "2026-06-30"
   },
   {
@@ -71,7 +71,22 @@
     "bytes": 15642642,
     "page_count": 81,
     "sha256": "18e73b84517865e97a3550c23e9db4f95fce64bf1113441cdcb69254ccd68aec",
-    "http_status": null,
+    "http_status": 200,
+    "captured_at": "2026-06-30"
+  },
+  {
+    "stem": "executive_budget_doc_2026",
+    "url": "https://dpb.virginia.gov/budget/buddoc26/BudgetDocument.pdf",
+    "title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act",
+    "publisher": "Virginia Department of Planning and Budget",
+    "enactment": "HB 30, as introduced",
+    "biennium": "FY2026-2028",
+    "stage": "as introduced",
+    "as_of": "2025-12-17",
+    "bytes": 7163812,
+    "page_count": 651,
+    "sha256": "34b893e6b0e353d6005d4ee3008e47e419741cf9e9c17aa05ba8c521e140a6e9",
+    "http_status": 200,
     "captured_at": "2026-06-30"
   }
 ]
