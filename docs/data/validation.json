@@ -1,8 +1,8 @@
 {
   "validated_on": "2026-06-30",
   "data_as_of": "2026-06-22",
-  "total": 76,
-  "passed": 76,
+  "total": 85,
+  "passed": 85,
   "failed": 0,
   "all_passed": true,
   "points": [
@@ -917,6 +917,114 @@
       "url": "https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf#page=26",
       "ok": true,
       "evidence": "…boose bill. ▪ Cardinal Disaster Relief Fund. Proposes the establishment of the Cardinal Disaster Relief Fund with the Department of Emergency Management, to be used for \"efforts to address life, sa…"
+    },
+    {
+      "id": "change:11",
+      "type": "next_year_change",
+      "label": "Expand judicial video conferencing infrastructure",
+      "value": null,
+      "source_stem": "executive_budget_doc_2026",
+      "doc_title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act",
+      "page": 46,
+      "url": "https://dpb.virginia.gov/budget/buddoc26/BudgetDocument.pdf#page=46",
+      "ok": true,
+      "evidence": "… General Fund 2.00 4.00 Authorized Positions Provides positions and funding to support the implementation and long-term maintenance of courtroom video conferencing technology infrastructure across the Commonwealth. Expand judicial video conferencing technolog…"
+    },
+    {
+      "id": "change:12",
+      "type": "next_year_change",
+      "label": "New staff for the Children's Ombudsman",
+      "value": null,
+      "source_stem": "executive_budget_doc_2026",
+      "doc_title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act",
+      "page": 63,
+      "url": "https://dpb.virginia.gov/budget/buddoc26/BudgetDocument.pdf#page=63",
+      "ok": true,
+      "evidence": "…Fund Introduced Budget Non-Technical Changes Provides funding and two positions for a data analyst and a deputy director for the Office of the Children's Ombudsman. Provide additional staff for the Office of t…"
+    },
+    {
+      "id": "change:13",
+      "type": "next_year_change",
+      "label": "Expanded hemp enforcement",
+      "value": null,
+      "source_stem": "executive_budget_doc_2026",
+      "doc_title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act",
+      "page": 91,
+      "url": "https://dpb.virginia.gov/budget/buddoc26/BudgetDocument.pdf#page=91",
+      "ok": true,
+      "evidence": "… 2027 2028 $268,684 $268,684 Nongeneral Fund Appropriates nongeneral funds to expand the department's hemp enforcement activities. It is anticipated that the department will hire additional inspector and compliance positions, implement a product sampling program, and work more closely with local law enforcement to investigate and prosecute violations of Virginia law. . Increase nongeneral fund support for hemp …"
+    },
+    {
+      "id": "change:14",
+      "type": "next_year_change",
+      "label": "$299M more for school construction grants",
+      "value": null,
+      "source_stem": "executive_budget_doc_2026",
+      "doc_title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act",
+      "page": 118,
+      "url": "https://dpb.virginia.gov/budget/buddoc26/BudgetDocument.pdf#page=118",
+      "ok": true,
+      "evidence": "…nd in support of school construction grants. In total, $299.0 million of additional state support is provided for grants to local school boards to support the construction, expansion, or modernization of public school buildings. Increase state support for school constructi…"
+    },
+    {
+      "id": "change:15",
+      "type": "next_year_change",
+      "label": "Ends automatic inflation for Medicaid providers",
+      "value": null,
+      "source_stem": "executive_budget_doc_2026",
+      "doc_title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act",
+      "page": 216,
+      "url": "https://dpb.virginia.gov/budget/buddoc26/BudgetDocument.pdf#page=216",
+      "ok": true,
+      "evidence": "…nd ($4,055,617) ($7,648,975) Nongeneral Fund Eliminates the automatic inflation adjustments that would have been provided for hospitals, freestanding psychiatric facilities, disproportionate share hospitals payments, graduate medical education payments, nursing facilities, and any other provider rates for fiscal years 2027 and 2028. Eliminate biennial inflation for medical ass…"
+    },
+    {
+      "id": "change:16",
+      "type": "next_year_change",
+      "label": "Hampton Roads nutrient removal funding",
+      "value": null,
+      "source_stem": "executive_budget_doc_2026",
+      "doc_title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act",
+      "page": 255,
+      "url": "https://dpb.virginia.gov/budget/buddoc26/BudgetDocument.pdf#page=255",
+      "ok": true,
+      "evidence": "… 2028 ($1,958,313) ($1,958,313) General Fund Provides funding to complete support for the Hampton Roads Sanitation District Boat Harbor Treatment Plant project through the Enhanced Nutrient Removal Certainty program. This amendment includes budget language that…"
+    },
+    {
+      "id": "change:17",
+      "type": "next_year_change",
+      "label": "More support for State Police operations",
+      "value": null,
+      "source_stem": "executive_budget_doc_2026",
+      "doc_title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act",
+      "page": 279,
+      "url": "https://dpb.virginia.gov/budget/buddoc26/BudgetDocument.pdf#page=279",
+      "ok": true,
+      "evidence": "…Fund Introduced Budget Non-Technical Changes Provides additional general fund support to cover increased personnel and equipment costs. Provide additional support for operations 20…"
+    },
+    {
+      "id": "change:18",
+      "type": "next_year_change",
+      "label": "Port Authority terminal expansion",
+      "value": null,
+      "source_stem": "executive_budget_doc_2026",
+      "doc_title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act",
+      "page": 299,
+      "url": "https://dpb.virginia.gov/budget/buddoc26/BudgetDocument.pdf#page=299",
+      "ok": true,
+      "evidence": "…2028 $37,500,000 $50,000,000 Nongeneral Fund Provides additional nongeneral fund appropriation to continue efforts required to keep facilities operating at optimum efficiency especially during construction elsewhere on the port terminals. Expand empty yard 2027 2028 $60,600,000 $69,…"
+    },
+    {
+      "id": "change:19",
+      "type": "next_year_change",
+      "label": "New 2026 capital construction pool",
+      "value": null,
+      "source_stem": "executive_budget_doc_2026",
+      "doc_title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act",
+      "page": 317,
+      "url": "https://dpb.virginia.gov/budget/buddoc26/BudgetDocument.pdf#page=317",
+      "ok": true,
+      "evidence": "…arlottesville, Chesterfield, and Petersburg. Provides funding for the construction or acquisition of capital projects at agencies and institutions of higher education. Funding for 15 projects is pooled together centrally and subject to the capital pool process in Section 2.2-1515 et. seq, Code of Virginia. Create 2026 capital construction pool 2027 2…"
     }
   ]
 }
