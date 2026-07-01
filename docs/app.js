@@ -28,6 +28,7 @@ const DOC_SHORT = {
   "overview_2026_fy2026-2028": "Overview FY26-28",
   "conf_report_hb30_2026": "HB 30 Conf. Report",
   "virginia_in_focus_2026": "Virginia in Focus",
+  "executive_budget_doc_2026": "Executive Budget Doc.",
 };
 
 // ---- formatting ----
@@ -190,7 +191,7 @@ function heroBlock() {
   const sec = el("section", { class: "hero wrap" });
   sec.appendChild(el("h1", { text: "Where Virginia's money goes" }));
   sec.appendChild(el("p", { class: "lede",
-    text: "A plain-language look at the Commonwealth's general fund budget — every figure traced to an official House Appropriations Committee document, down to the page." }));
+    text: "A plain-language look at the Commonwealth's general fund budget — every figure traced to an official state budget document, down to the page." }));
   if (VALIDATION) {
     sec.appendChild(el("p", { class: "verified-note", title: "Checked by scripts/validate.py" }, [
       el("span", { class: "vcheck", "aria-hidden": "true", text: "✓ " }),
@@ -527,7 +528,7 @@ function tabNextYear(root) {
   // key changes, grouped — each verbatim with a page citation
   const sec2 = el("section", { class: "wrap" });
   sec2.appendChild(sectionHead("", "Key changes in HB 30",
-    "Substantive changes pulled from the 107-page committee overview of HB 30. Every line is verbatim and links to its page."));
+    "Substantive changes pulled from the committee overview and the executive budget document for HB 30. Every line is verbatim and links to its page."));
   const grid = el("div", { class: "change-grid" });
   (DATA.next_year_changes || []).forEach((c) => {
     grid.appendChild(el("div", { class: "change-card" }, [

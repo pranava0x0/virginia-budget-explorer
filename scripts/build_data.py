@@ -329,7 +329,10 @@ def build() -> dict:
                        "doc_title": manifest[stem]["title"],
                        "as_of": manifest[stem]["as_of"]})
 
-    # next-year (FY2026-2028) key changes, verbatim-verified on their page
+    # next-year (FY2026-2028) key changes, verbatim-verified on their page.
+    # 5-tuple (stem, page, area, headline, text) -- a stray 4-tuple copied from
+    # before per-entry stems were added raises here with an "expected 5, got 4"
+    # unpacking error naming the exact NEXT_YEAR list to check.
     next_year = []
     for stem, page, area, headline, text in NEXT_YEAR:
         assert_on_page(stem, page, text, "next-year change"); checks += 1
@@ -353,8 +356,9 @@ def build() -> dict:
             "built_at": date.today().isoformat(),
             "checks_passed": checks,
             "note": ("Figures transcribed from official House Appropriations "
-                     "Committee documents and verified verbatim against the "
-                     "source page. By-area dollars are General Fund."),
+                     "Committee and Department of Planning and Budget documents, "
+                     "verified verbatim against the source page. By-area dollars "
+                     "are General Fund."),
         },
         "areas": area_order,
         "by_area": by_area,

@@ -10,7 +10,7 @@
   none have been curated into `build_data.py` yet — they'd need their own
   `NEXT_YEAR`-style list (or a `biennium` field added to `next_year_changes`)
   since mixing them into the FY2026-2028 list as-is would mislabel them.
-- **Curate more of the 324-candidate pool** (medium). Only 9 of 324 deterministically-mined
+- **Curate more of the 313-candidate pool** (medium). Only 9 of 313 deterministically-mined
   candidates from the executive budget document have been hand-picked into
   `NEXT_YEAR` so far. The full, uncapped set is in
   `data/derived/executive_budget_doc_2026.candidate_quotes.json` (regenerate
