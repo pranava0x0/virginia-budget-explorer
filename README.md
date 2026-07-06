@@ -18,7 +18,9 @@ Accessibility: keyboard-navigable ARIA tabs, skip link, table captions,
 AA-contrast text, visible focus, and reduced-motion support.
 
 Every figure shows a source + page citation, and a build-time validator confirms
-all 76 data points against their source page (the green "verified" banner).
+every figure and quote against its source page (the green "verified" banner shows
+the live count). A GitHub Actions workflow runs that validator plus the test suite
+on every push and PR, so a one-character drift in a quote fails CI.
 
 ## What's in it (tabbed)
 
@@ -28,10 +30,11 @@ all 76 data points against their source page (the green "verified" banner).
 - **Over time** — each area's general fund across three budgets: FY2024-2026 as
   adopted, as amended, and FY2026-2028 as introduced.
 - **Funding** — where the money comes from (general fund + nongeneral fund).
-- **Next year** — the FY2026-2028 budget (HB 30): proposed totals, the by-area
-  change vs the current budget, and key deltas/changes pulled verbatim from the
-  107-page committee overview and the 651-page DPB executive budget document,
-  each with a page citation.
+- **New budget** — the FY2026-2028 budget (HB 30), now enacted (Chapter law):
+  an enacted-status callout with all-funds operating totals from the LIS Budget
+  Portal, the by-area change vs the current budget (general fund, as introduced),
+  and key changes pulled verbatim from the 107-page committee overview and the
+  651-page DPB executive budget document, each with a page citation.
 - **Quotes & sources** — policy principles (verbatim, page-cited) and the six
   official documents behind every number, with the verification status.
 
@@ -43,10 +46,15 @@ is deterministic.
 ```bash
 python3 scripts/scrape.py        # download + cache official PDFs -> sources/raw/, manifest.json
 python3 scripts/extract.py       # per-page text (PyMuPDF) -> data/text/*.{txt,pages.json}
+python3 scripts/portal_api.py    # LIS Budget Portal XML -> data/derived/portal/*.json (+ raw)
 python3 scripts/build_data.py    # curated + source-verified data -> docs/data/budget.json
-python3 scripts/validate.py      # per-data-point check -> docs/data/validation.json (CI gate)
+python3 scripts/validate.py      # per-data-point check -> docs/data/validation.json
 python3 -m unittest discover -s tests   # lock quotes/numbers to their pages
 ```
+
+The last two steps are the CI gate: `.github/workflows/ci.yml` runs `validate.py`
+(non-zero exit on any drift) and the test suite on every push and PR, against the
+committed data artifacts (the raw PDFs are gitignored, so CI re-downloads nothing).
 
 ### Mining quotes from a large (100s-of-pages) document
 
@@ -78,6 +86,28 @@ other entry.
 aren't preserved anywhere else since `sources/raw/*.pdf` is gitignored);
 `*.candidate_quotes.json` is not (cheaply regenerable from committed data,
 and it's scratch triage output, not something the build or tests read).
+
+### The Virginia Budget Portal API and freshness probe
+
+`budget.lis.virginia.gov` publishes the budget as structured XML alongside the
+PDFs. `scripts/portal_api.py` ingests two endpoints — the year/session/bill/stage
+index and per-secretariat totals — caching the raw XML and committing parsed JSON
+under `data/derived/portal/`. The raw XML is committed too (small text), so
+`tests/test_portal.py` re-parses it and self-verifies offline.
+
+**Frame caveat:** the portal's secretariat totals are **all funds** (≈$100B/yr),
+a different frame from the **general-fund** figures everywhere else on the site
+(≈$35B/yr). They are labeled as such, stored verbatim, and never summed — the
+rows include branch-level aggregates (e.g. "Executive Department" already contains
+every "Office of …" beneath it), so summing them double-counts; each part's own
+total is the authoritative figure. This is why the enacted budget contributes an
+all-funds callout, not GF pie slices.
+
+`scripts/freshness.py` (run weekly by `.github/workflows/freshness.yml`) diffs the
+live portal stages and source-document sizes against the committed baselines and
+opens a GitHub issue on drift — detection only, never auto-ingest. It exists
+because the site once presented a superseded stage as current; run it with
+`--check` to exit non-zero locally when something upstream has changed.
 
 Then serve the static site:
 
