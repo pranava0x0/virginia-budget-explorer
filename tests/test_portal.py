@@ -87,5 +87,16 @@ class TestPortalInvariants(unittest.TestCase):
         self.assertGreater(part1["totals_year1"], 50_000_000_000)
 
 
+class TestPortalParsing(unittest.TestCase):
+    def test_int_or_none_handles_sign_and_absence(self):
+        from portal_api import _int_or_none
+        self.assertEqual(_int_or_none("102491360895"), 102491360895)
+        self.assertEqual(_int_or_none("-5000"), -5000)   # str.isdigit() would have dropped this
+        self.assertEqual(_int_or_none("  42 "), 42)
+        self.assertIsNone(_int_or_none(""))
+        self.assertIsNone(_int_or_none(None))
+        self.assertIsNone(_int_or_none("N/A"))
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

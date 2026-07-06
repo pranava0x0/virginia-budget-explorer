@@ -262,7 +262,7 @@ function overviewTop10Section() {
   if (!items.length) return null;
   const sec = el("section", { class: "wrap" });
   sec.appendChild(sectionHead("", "Largest general fund programs, FY2026",
-    "The ten biggest single general fund appropriations — line items, not whole areas."));
+    "The ten biggest single general fund appropriations. Line items, not whole areas."));
   // Note the document's OWN stated share (72.3%, verbatim on p.17), not a
   // computed sum: the page's ten bar labels add to ~$24.8B while its headline
   // says "$24.4 billion" — a source-side discrepancy (see issues.md). Showing a

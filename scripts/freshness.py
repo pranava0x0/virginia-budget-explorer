@@ -32,6 +32,7 @@ import logging
 import os
 import socket
 import sys
+import urllib.error
 import urllib.request
 from pathlib import Path
 
