@@ -87,7 +87,7 @@ const TABS = [
   { id: "overview", label: "Overview" },
   { id: "trends", label: "Trends" },
   { id: "funding", label: "Funding" },
-  { id: "nextyear", label: "Next year" },
+  { id: "nextyear", label: "New budget" },
   { id: "sources", label: "Sources" },
 ];
 
@@ -232,7 +232,7 @@ function tabOverview(root) {
   kpis.appendChild(kpiTile("Biggest area", fmtMoneyB(top.amended), "B", top.area, false,
     top.srcAmended ? cite(top.srcAmended.source_stem, top.srcAmended.page, { short: true }) : null));
   kpis.appendChild(kpiTile("Spending areas", String(DATA.areas.length), "", "Secretarial areas", true, null));
-  if (fySpend) kpis.appendChild(kpiTile("Next biennium", String(fySpend.billions), "B", "FY2026-2028 (HB 30)", true,
+  if (fySpend) kpis.appendChild(kpiTile("New budget", String(fySpend.billions), "B", "FY2026-2028 · HB 30, as introduced", true,
     cite(fySpend.source_stem, fySpend.page, { short: true })));
   root.appendChild(kpis);
 
@@ -507,23 +507,51 @@ function tabFunding(root) {
   root.appendChild(sec);
 }
 
-// ============================ NEXT YEAR TAB ============================
+// ============================ NEW BUDGET TAB ============================
+// Enacted-status callout. HB 30 is now Chapter law; the all-funds operating
+// totals come from the LIS portal (a DIFFERENT frame from the GF figures below,
+// so it's labeled). The GF by-area detail stays at "as introduced" until HAC
+// publishes the enacted overview — stated plainly rather than faked.
+function enactedCallout() {
+  const en = DATA.enacted;
+  if (!en) return null;
+  const oa = en.operating_all_funds;
+  const b = (v) => "$" + v.toFixed(1) + "B";
+  return el("div", { class: "panel enacted" }, [
+    el("p", { class: "enacted-lead" }, [
+      el("strong", { text: "HB 30 is enacted." }),
+      ` Signed into law as a Chapter of the Acts of Assembly (${en.session}); the ` +
+      `${biShort(en.biennium)} biennium takes effect July 1, 2026.`,
+    ]),
+    el("p", { class: "enacted-figs" }, [
+      "Total operating budget, ", el("strong", { text: "all funds" }),
+      `: ${b(oa.fy1_billions)} in FY${en.budget_year1} · ${b(oa.fy2_billions)} in FY${en.budget_year2}. `,
+      el("a", { class: "cite", href: en.endpoint, target: "_blank", rel: "noopener",
+        title: "Open the LIS Budget Portal endpoint" }, ["LIS Budget Portal ↗"]),
+    ]),
+    el("p", { class: "panel-note", style: "margin:10px 0 0" }, [en.gf_by_area_note]),
+  ]);
+}
+
 function tabNextYear(root) {
   const spend = DATA.totals.find((t) => t.biennium === "FY2026-2028" && t.kind === "GF spending");
   const res = DATA.totals.find((t) => t.biennium === "FY2026-2028" && t.kind === "GF resources");
   const rows = areaRows();
   const introTot = totalFor(rows, "introduced"), amendedTot = totalFor(rows, "amended");
 
+  const callout = enactedCallout();
+  if (callout) root.appendChild(el("div", { class: "wrap" }, [callout]));
+
   const kpis = el("div", { class: "kpis wrap" });
-  if (spend) kpis.appendChild(kpiTile("Proposed GF spending", String(spend.billions), "B", "FY2026-2028 (HB 30)", false, cite(spend.source_stem, spend.page, { short: true })));
-  if (res) kpis.appendChild(kpiTile("GF resources available", String(res.billions), "B", "FY2026-2028 (HB 30)", true, cite(res.source_stem, res.page, { short: true })));
+  if (spend) kpis.appendChild(kpiTile("GF spending, as introduced", String(spend.billions), "B", "FY2026-2028 · HB 30", false, cite(spend.source_stem, spend.page, { short: true })));
+  if (res) kpis.appendChild(kpiTile("GF resources, as introduced", String(res.billions), "B", "FY2026-2028 · HB 30", true, cite(res.source_stem, res.page, { short: true })));
   kpis.appendChild(kpiTile("Change vs current", "+" + fmtMoneyB(introTot - amendedTot), "B", "vs FY2024-2026 amended", true, null));
   root.appendChild(kpis);
 
   // by-area: FY26-28 introduced vs FY24-26 amended
   const sec = el("section", { class: "wrap" });
-  sec.appendChild(sectionHead("", "Proposed budget by area",
-    "How HB 30 (introduced January 2026) compares to the current amended budget, by area. Each row links to its source page."));
+  sec.appendChild(sectionHead("", "General fund by area, as introduced",
+    "HB 30 as introduced (Jan 2026) vs the current amended budget. HB 30 is now enacted; the enacted general-fund breakdown will replace these figures when HAC publishes its post-session overview. Each row links to its source page."));
   const tbody = el("tbody");
   [...rows].sort((a, b) => b.introduced - a.introduced).forEach((r) => {
     const up = r.deltaNext >= 0;
@@ -540,18 +568,18 @@ function tabNextYear(root) {
     el("td", { class: "num", text: fmtB(introTot) }),
     el("td", { class: "num delta up", text: "▲ " + fmtM(introTot - amendedTot) }), el("td", {}, [""]),
   ])]);
-  const thead = el("thead", {}, [el("tr", {}, ["Area", "Current (amended)", "Proposed (HB 30)", "Change", "Source"]
+  const thead = el("thead", {}, [el("tr", {}, ["Area", "Current (amended)", "As introduced (HB 30)", "Change", "Source"]
     .map((h) => el("th", { scope: "col", text: h })))]);
   const caption = el("caption", { class: "visually-hidden",
-    text: "FY2026-2028 proposed general fund by secretarial area compared with the current amended budget, in billions of dollars." });
+    text: "FY2026-2028 general fund by secretarial area, HB 30 as introduced, compared with the current amended budget, in billions of dollars." });
   sec.appendChild(el("div", { class: "panel" }, [el("div", { class: "table-scroll" },
     [el("table", { class: "budget nextyear-cols" }, [caption, thead, tbody, tfoot])])]));
   root.appendChild(sec);
 
   // key changes, grouped — each verbatim with a page citation
   const sec2 = el("section", { class: "wrap" });
-  sec2.appendChild(sectionHead("", "Key changes in HB 30",
-    "Substantive changes pulled from the committee overview and the executive budget document for HB 30. Every line is verbatim and links to its page."));
+  sec2.appendChild(sectionHead("", "Key changes in HB 30 (as introduced)",
+    "Substantive changes pulled from the committee overview and the executive budget document for HB 30 as introduced. Every line is verbatim and links to its page."));
   const grid = el("div", { class: "change-grid" });
   (DATA.next_year_changes || []).forEach((c) => {
     grid.appendChild(el("div", { class: "change-card" }, [

@@ -19,7 +19,12 @@
 - Commerce, Labor, Natural Resources & Agriculture: $2.4B — [p. 9](https://budget.lis.virginia.gov/sessionreport/2025/1/2467/#page=9)
 - Debt Service: $2.0B — [p. 9](https://budget.lis.virginia.gov/sessionreport/2025/1/2467/#page=9)
 
-## Next year (FY2026-2028, HB 30) — key changes
+## FY2026-2028 budget (HB 30) — enacted
+- Status: Chapter (enacted) (2026 Special Session I), confirmed via the LIS Budget Portal on 2026-07-05.
+- Operating budget, ALL FUNDS: $102.5B (FY2027) and $101.0B (FY2028) — [portal](https://budget.lis.virginia.gov/BudgetPortalWebService/Budget.Bills.2.ListOfYearSessionBillNumberTypeSecretariat/2026/2/HB30/Chapter/).
+- The by-area figures are general fund, HB 30 as introduced (Jan 2026). The enacted general-fund breakdown will appear when the House Appropriations Committee publishes its post-session overview.
+
+## FY2026-2028 (HB 30) — key changes (general fund, as introduced)
 - [Overall] $2.5B more than the current budget: "Measured against Chapter 725 operating expenses, this represents an increase of $2.5 billion over the biennium" ([p. 20](https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf#page=20))
 - [Overall] $4.7B in net new spending: "HB 30, as introduced, includes a new amendments totaling a net of $4.7 billion of funding increases over the biennium" ([p. 22](https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf#page=22))
 - [Overall] K-12 and HHS still dominate: "continue to dominate total spending with 65% of spending directed to these areas of government" ([p. 21](https://hac.virginia.gov/wp-content/uploads/2026/01/2026-Summary-Document-1-8-2026.pdf#page=21))

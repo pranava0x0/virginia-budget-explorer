@@ -3,7 +3,7 @@
     "title": "Virginia Budget Explorer",
     "subtitle": "Where Virginia's money comes from and where it goes",
     "data_as_of": "2026-06-22",
-    "built_at": "2026-07-01",
+    "built_at": "2026-07-05",
     "checks_passed": 85,
     "note": "Figures transcribed from official House Appropriations Committee and Department of Planning and Budget documents, verified verbatim against the source page. By-area dollars are General Fund."
   },
@@ -834,6 +834,26 @@
       "doc_title": "The 2026 Executive Budget Document: Commonwealth of Virginia 2026-2028 Biennial Budget and Amendments to the 2025 Appropriation Act"
     }
   ],
+  "enacted": {
+    "bill": "HB 30",
+    "biennium": "FY2026-2028",
+    "stage": "Chapter (enacted)",
+    "session": "2026 Special Session I",
+    "budget_year1": 2027,
+    "budget_year2": 2028,
+    "frame": "all funds",
+    "operating_all_funds": {
+      "fy1_exact": 102491360895,
+      "fy2_exact": 100970354690,
+      "fy1_billions": 102.5,
+      "fy2_billions": 101.0
+    },
+    "gf_by_area_stage": "As introduced",
+    "gf_by_area_note": "The by-area figures are general fund, HB 30 as introduced (Jan 2026). The enacted general-fund breakdown will appear when the House Appropriations Committee publishes its post-session overview.",
+    "source": "Virginia Budget Portal web service (budget.lis.virginia.gov)",
+    "endpoint": "https://budget.lis.virginia.gov/BudgetPortalWebService/Budget.Bills.2.ListOfYearSessionBillNumberTypeSecretariat/2026/2/HB30/Chapter/",
+    "confirmed_at": "2026-07-05"
+  },
   "sources": [
     {
       "stem": "overview_2024_fy2024-2026",
