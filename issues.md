@@ -138,3 +138,12 @@ Living audit trail. Each entry: date · area · description · root cause · sta
 - **"Virginia in Focus" FY25 by-area figures** live inside a chart image (no text
   layer), so they are deliberately not transcribed — only text-layer numbers are
   shipped, to keep every figure verifiable.
+- **2026-07-05 · Virginia in Focus p.17 top-10 total is internally inconsistent.**
+  The page's ten "Top 10 Programs" bar labels sum to ~$24.8B, but the same page's
+  headline reads "The top 10 general fund appropriations total $24.4 billion, or
+  72.3% of the general fund budget." All ten bar values are transcribed verbatim
+  and validated; the discrepancy is in the *source infographic*, not our data.
+  The Overview "Largest general fund programs" panel therefore surfaces the
+  document's own stated **share (72.3%)** rather than a computed dollar sum, so
+  the site never displays a total that contradicts the "$24.4 billion" quote it
+  also cites. Not a code bug — a documented source-side inconsistency.
