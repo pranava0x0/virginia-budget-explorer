@@ -98,7 +98,7 @@ class TestValues(unittest.TestCase):
 class TestSchemaAndCounts(unittest.TestCase):
     def test_top_level_keys(self):
         for k in ("meta", "areas", "by_area", "ngf_revenue", "gf_resources_fy2026",
-                  "gf_top10_fy2026", "totals", "quotes", "sources"):
+                  "gf_top10_fy2026", "totals", "quotes", "enacted", "sources"):
             self.assertIn(k, BUDGET)
 
     def test_areas_are_canonical(self):
@@ -123,6 +123,29 @@ class TestSchemaAndCounts(unittest.TestCase):
         amended = [r["millions"] for r in BUDGET["by_area"] if r["stage"] == "As amended"]
         total = sum(amended)
         self.assertAlmostEqual(sum(amended) / total * 100, 100.0, places=3)
+
+
+class TestEnacted(unittest.TestCase):
+    """The shipped 'enacted' block must trace to the committed portal data and
+    keep its ALL-FUNDS frame distinct from the general-fund figures."""
+
+    def test_enacted_traces_to_portal(self):
+        en = BUDGET.get("enacted")
+        self.assertIsNotNone(en, "enacted block missing (run scripts/build_data.py)")
+        sec = json.loads((ROOT / "data" / "derived" / "portal"
+                          / "secretariat_2026_2_HB30_Chapter.json").read_text())
+        part1 = next(p for p in sec["parts"] if p["part"] == "1")
+        self.assertEqual(en["operating_all_funds"]["fy1_exact"], part1["totals_year1"])
+        self.assertEqual(en["operating_all_funds"]["fy2_exact"], part1["totals_year2"])
+        self.assertEqual(en["budget_year1"], sec["budget_year1"])
+        self.assertEqual(en["frame"], "all funds")
+
+    def test_enacted_frame_not_conflated_with_gf(self):
+        en = BUDGET["enacted"]
+        # all-funds operating is ~$100B/yr; the whole GF biennium is ~$70B for
+        # two years. A GF figure stored here by mistake would trip this floor.
+        self.assertGreater(en["operating_all_funds"]["fy1_billions"], 90)
+        self.assertEqual(en["gf_by_area_stage"], "As introduced")
 
 
 class TestProvenance(unittest.TestCase):
@@ -167,7 +190,7 @@ class TestLlmsTxt(unittest.TestCase):
     def test_has_key_sections(self):
         text = (ROOT / "docs" / "llms.txt").read_text(encoding="utf-8")
         for marker in ("# Virginia Budget Explorer", "## Headline totals",
-                       "## Next year", "## Sources", "data/budget.json"):
+                       "## FY2026-2028", "## Sources", "data/budget.json"):
             self.assertIn(marker, text)
 
 
