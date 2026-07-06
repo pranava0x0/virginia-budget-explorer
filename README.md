@@ -1,5 +1,7 @@
 # Virginia Budget Explorer
 
+[![CI](https://github.com/pranava0x0/virginia-budget-explorer/actions/workflows/ci.yml/badge.svg)](https://github.com/pranava0x0/virginia-budget-explorer/actions/workflows/ci.yml)
+
 **Live:** https://pranava0x0.github.io/virginia-budget-explorer/
 
 A small, static dashboard for the Commonwealth of Virginia's general fund budget.
