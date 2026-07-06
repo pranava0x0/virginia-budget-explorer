@@ -129,8 +129,17 @@ def fetch(path: str, name: str, *, offline: bool) -> bytes:
 
 
 def _int_or_none(text: str | None) -> int | None:
+    """Parse a portal integer, sign included (str.isdigit() rejects '-5000').
+    Empty / i:nil -> None. A non-empty non-integer is anomalous for a
+    declared-numeric field, so log it rather than silently swallow it."""
     text = (text or "").strip()
-    return int(text) if text.isdigit() else None
+    if not text:
+        return None
+    try:
+        return int(text)
+    except ValueError:
+        log.warning("non-integer where a portal number was expected: %r", text)
+        return None
 
 
 def parse_year_session_bill(root: ET.Element) -> list[dict]:
