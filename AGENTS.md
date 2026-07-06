@@ -161,6 +161,28 @@ This is a schema change. **Don't do this casually.** Steps:
 4. Set `run_order` so enrichment connectors run *after* their producers.
 5. Schema-validate emitted records; tests catch any new field that the schema's `extra="forbid"` would reject.
 
+### Ingesting a source's structured API (not just its PDFs)
+
+When an authority publishes a data service alongside its documents (Virginia's
+LIS Budget Portal is one), ingest the service — it's reproducible and versioned
+where a scraped PDF isn't. See `scripts/portal_api.py` for the pattern:
+
+1. **Find the real endpoint.** Fetch the service's own `help`/index and read the
+   URL template off it. Don't trust a documented or guessed path (the plan's
+   `/rest/...` guess 404'd; the live path had no `/rest/`).
+2. **Fetch rate-limited + host-allowlisted**, same network ethics as the scraper.
+3. **Cache the raw response AND commit it** (small XML/JSON is the evidence),
+   next to the parsed output. A test re-parses the committed raw bytes and
+   asserts the derived JSON matches, so the repo self-verifies offline. Support
+   an `--offline` re-parse that preserves `fetched_at` (don't re-stamp).
+4. **Label the frame.** API totals are frequently a different frame from the
+   figures the site already ships (all-funds vs general-fund here). Store them
+   labeled, never sum across frames, and watch for hierarchical rows that
+   double-count (a branch total that already contains its offices) — see
+   [CLAUDE.md → Data handling](CLAUDE.md).
+5. **Confirm the stage in the authoritative index before asserting it.** Claim a
+   bill is "enacted" only because the index actually lists the enacted stage.
+
 ### Running an auditable LLM analysis over a corpus
 
 For a corpus of comments / filings / documents, decompose — don't one-shot (rationale in [CLAUDE.md → AI / API cost optimization](CLAUDE.md)):
