@@ -250,7 +250,30 @@ function tabOverview(root) {
   root.appendChild(sec);
   drawDonutForStage(host, stage);
 
+  const top10 = overviewTop10Section();
+  if (top10) root.appendChild(top10);
   root.appendChild(overviewTableSection(rows));
+}
+
+// Largest single general fund appropriations (line items, not areas) — a zoom
+// from "which areas" to "which specific programs." Data: gf_top10_fy2026.
+function overviewTop10Section() {
+  const items = DATA.gf_top10_fy2026 || [];
+  if (!items.length) return null;
+  const sec = el("section", { class: "wrap" });
+  sec.appendChild(sectionHead("", "Largest general fund programs, FY2026",
+    "The ten biggest single general fund appropriations — line items, not whole areas."));
+  // Note the document's OWN stated share (72.3%, verbatim on p.17), not a
+  // computed sum: the page's ten bar labels add to ~$24.8B while its headline
+  // says "$24.4 billion" — a source-side discrepancy (see issues.md). Showing a
+  // summed total here would contradict the "$24.4 billion" quote we also cite.
+  const panel = el("div", { class: "panel" }, [
+    el("div", { class: "panel-note" }, [
+      "Together, 72.3% of the FY2026 general fund. ", cite(items[0].source_stem, items[0].page)]),
+    barList(items, "var(--accent)"),
+  ]);
+  sec.appendChild(panel);
+  return sec;
 }
 function pillBtn(value, label) {
   return el("button", {
