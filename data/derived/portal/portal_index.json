@@ -1,0 +1,1376 @@
+{
+  "endpoint": "https://budget.lis.virginia.gov/BudgetPortalWebService/Budget.Bills.1.ListOfYearSessionBill/",
+  "source": "Virginia Budget Portal web service (budget.lis.virginia.gov)",
+  "fetched_at": "2026-07-05",
+  "count": 171,
+  "bills": [
+    {
+      "year": "2026",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Chapter"
+    },
+    {
+      "year": "2026",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2026",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2026",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Reenrolled"
+    },
+    {
+      "year": "2026",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 7"
+    },
+    {
+      "year": "2026",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2026",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB29",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2026",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB30",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2025",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1600",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 725"
+    },
+    {
+      "year": "2025",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1600",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2025",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1600",
+      "senate_bill": "SB800",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2025",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1600",
+      "senate_bill": "SB",
+      "bill_type": "Reenrolled"
+    },
+    {
+      "year": "2024",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB6002",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 1"
+    },
+    {
+      "year": "2024",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB6001",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 2"
+    },
+    {
+      "year": "2024",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB6001",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2024",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB6002",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2024",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB6001",
+      "senate_bill": "SB6001",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2024",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB6002",
+      "senate_bill": "SB6002",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2024",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2024",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2024",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB29",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2024",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB30",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2023",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB6001",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 1"
+    },
+    {
+      "year": "2023",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB6001",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2023",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB6001",
+      "senate_bill": "SB6001",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2023",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1400",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 769"
+    },
+    {
+      "year": "2023",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1400",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2023",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1400",
+      "senate_bill": "SB800",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2023",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1400",
+      "senate_bill": "SB",
+      "bill_type": "Reenrolled"
+    },
+    {
+      "year": "2022",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB29",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 1"
+    },
+    {
+      "year": "2022",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 2"
+    },
+    {
+      "year": "2022",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB29",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2022",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2022",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB29",
+      "senate_bill": "SB29",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2022",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB30",
+      "senate_bill": "SB30",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2022",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB29",
+      "senate_bill": "SB",
+      "bill_type": "Reenrolled"
+    },
+    {
+      "year": "2022",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Reenrolled"
+    },
+    {
+      "year": "2022",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB29",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2022",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB30",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2021",
+      "session_type": "3",
+      "session_desc": "Special Session II",
+      "house_bill": "HB7001",
+      "senate_bill": "SB",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2021",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB1800",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 552"
+    },
+    {
+      "year": "2021",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB1800",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2021",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB1800",
+      "senate_bill": "SB1100",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2021",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB1800",
+      "senate_bill": "SB",
+      "bill_type": "Reenrolled"
+    },
+    {
+      "year": "2021",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1800",
+      "senate_bill": "SB1100",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2020",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5005",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 56"
+    },
+    {
+      "year": "2020",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5005",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2020",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5005",
+      "senate_bill": "SB5015",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2020",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5005",
+      "senate_bill": "SB",
+      "bill_type": "Reenrolled"
+    },
+    {
+      "year": "2020",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 1283"
+    },
+    {
+      "year": "2020",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 1289"
+    },
+    {
+      "year": "2020",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2020",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2020",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB29",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2020",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB30",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2020",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB",
+      "bill_type": "Reenrolled"
+    },
+    {
+      "year": "2020",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Reenrolled"
+    },
+    {
+      "year": "2019",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1700",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 854"
+    },
+    {
+      "year": "2019",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1700",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2019",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1700",
+      "senate_bill": "SB1100",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2019",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1700",
+      "senate_bill": "SB",
+      "bill_type": "Reenrolled"
+    },
+    {
+      "year": "2018",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5001",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 1"
+    },
+    {
+      "year": "2018",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5002",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 2"
+    },
+    {
+      "year": "2018",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5001",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2018",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5002",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2018",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5001",
+      "senate_bill": "SB",
+      "bill_type": "HB5001S1"
+    },
+    {
+      "year": "2018",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5002",
+      "senate_bill": "SB",
+      "bill_type": "HB5002S1"
+    },
+    {
+      "year": "2018",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5001",
+      "senate_bill": "SB",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2018",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5002",
+      "senate_bill": "SB",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2018",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB29",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2018",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB30",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2017",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1500",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 836"
+    },
+    {
+      "year": "2017",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1500",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2017",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1500",
+      "senate_bill": "SB900",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2017",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1500",
+      "senate_bill": "SB",
+      "bill_type": "Reenrolled"
+    },
+    {
+      "year": "2016",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 732"
+    },
+    {
+      "year": "2016",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 780"
+    },
+    {
+      "year": "2016",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2016",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2016",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB29",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2016",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB30",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2016",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Reenrolled"
+    },
+    {
+      "year": "2015",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1400",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 665"
+    },
+    {
+      "year": "2015",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1400",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2015",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1400",
+      "senate_bill": "SB800",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2014",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5001",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 1"
+    },
+    {
+      "year": "2014",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5002",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 2"
+    },
+    {
+      "year": "2014",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5010",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 3"
+    },
+    {
+      "year": "2014",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5010",
+      "senate_bill": "SB",
+      "bill_type": "Engrossed"
+    },
+    {
+      "year": "2014",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5010",
+      "senate_bill": "SB",
+      "bill_type": "Enrolled"
+    },
+    {
+      "year": "2014",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB",
+      "senate_bill": "SB5005",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2014",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5001",
+      "senate_bill": "SB",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2014",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5002",
+      "senate_bill": "SB",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2014",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5003",
+      "senate_bill": "SB5003",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2014",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5004",
+      "senate_bill": "SB",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2014",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5010",
+      "senate_bill": "SB",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2014",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5010",
+      "senate_bill": "SB",
+      "bill_type": "Reenrolled"
+    },
+    {
+      "year": "2014",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5002",
+      "senate_bill": "SB",
+      "bill_type": "Substitute"
+    },
+    {
+      "year": "2014",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5010",
+      "senate_bill": "SB",
+      "bill_type": "Substitute"
+    },
+    {
+      "year": "2014",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB29",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2014",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB30",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2013",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1500",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 806"
+    },
+    {
+      "year": "2013",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1500",
+      "senate_bill": "SB800",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2012",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB1300",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 2"
+    },
+    {
+      "year": "2012",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB1301",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 3"
+    },
+    {
+      "year": "2012",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB1300",
+      "senate_bill": "SB",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2012",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB1301",
+      "senate_bill": "SB",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2012",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1300",
+      "senate_bill": "SB",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2012",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1301",
+      "senate_bill": "SB",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2012",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB29",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2012",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB30",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2011",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1500",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 890"
+    },
+    {
+      "year": "2011",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1500",
+      "senate_bill": "SB800",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2010",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 872"
+    },
+    {
+      "year": "2010",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 874"
+    },
+    {
+      "year": "2010",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB29",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2010",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB30",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2009",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1600",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 781"
+    },
+    {
+      "year": "2009",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1600",
+      "senate_bill": "SB850",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2008",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 847"
+    },
+    {
+      "year": "2008",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 879"
+    },
+    {
+      "year": "2008",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB29",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2008",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB30",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2007",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1650",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 847"
+    },
+    {
+      "year": "2007",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1650",
+      "senate_bill": "SB750",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2006",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5032",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 10"
+    },
+    {
+      "year": "2006",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5012",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 2"
+    },
+    {
+      "year": "2006",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5002",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 3"
+    },
+    {
+      "year": "2006",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB",
+      "senate_bill": "SB5002",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2006",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB",
+      "senate_bill": "SB5003",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2006",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB",
+      "senate_bill": "SB5020",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2006",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5001",
+      "senate_bill": "SB",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2006",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5002",
+      "senate_bill": "SB",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2006",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5003",
+      "senate_bill": "SB5001",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2006",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5004",
+      "senate_bill": "SB",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2006",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5012",
+      "senate_bill": "SB",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2006",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5099",
+      "senate_bill": "SB",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2006",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB29",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2006",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB30",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2005",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1500",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 951"
+    },
+    {
+      "year": "2005",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1500",
+      "senate_bill": "SB700",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2004",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5001",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 4"
+    },
+    {
+      "year": "2004",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB",
+      "senate_bill": "SB5004",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2004",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB5001",
+      "senate_bill": "SB5001",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2004",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 943"
+    },
+    {
+      "year": "2004",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB29",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2004",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB30",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2003",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1400",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 1042"
+    },
+    {
+      "year": "2003",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1400",
+      "senate_bill": "SB700",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2002",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 814"
+    },
+    {
+      "year": "2002",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 899"
+    },
+    {
+      "year": "2002",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB29",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2002",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB30",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2001",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB3",
+      "senate_bill": "SB",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2001",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1600",
+      "senate_bill": "SB800",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2000",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 1072"
+    },
+    {
+      "year": "2000",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 1073"
+    },
+    {
+      "year": "2000",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB29",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "2000",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB30",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "1999",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1450",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 935"
+    },
+    {
+      "year": "1999",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1450",
+      "senate_bill": "SB800",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "1998",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB4001",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 1"
+    },
+    {
+      "year": "1998",
+      "session_type": "2",
+      "session_desc": "Special Session I",
+      "house_bill": "HB4001",
+      "senate_bill": "SB4001",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "1998",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 464"
+    },
+    {
+      "year": "1998",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 889"
+    },
+    {
+      "year": "1998",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB29",
+      "senate_bill": "SB29",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "1998",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB30",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "1997",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1600",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 924"
+    },
+    {
+      "year": "1997",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB1600",
+      "senate_bill": "SB700",
+      "bill_type": "Introduced"
+    },
+    {
+      "year": "1996",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB",
+      "bill_type": "Chapter 912"
+    },
+    {
+      "year": "1996",
+      "session_type": "1",
+      "session_desc": "Session",
+      "house_bill": "HB30",
+      "senate_bill": "SB30",
+      "bill_type": "Introduced"
+    }
+  ]
+}
