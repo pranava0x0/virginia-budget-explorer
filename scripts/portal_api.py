@@ -88,22 +88,12 @@ def _strip_ns(xml_bytes: bytes) -> ET.Element:
     return ET.fromstring(txt)
 
 
-def fetch(path: str, name: str, *, offline: bool) -> bytes:
-    """Return raw XML bytes for a portal endpoint path.
-
-    offline: read the committed raw cache only (no network) — for CI and tests.
-    live: rate-limited GET (host-allowlisted, informative UA), then write the
-    raw cache so re-runs and the self-verifying test never re-download.
-    """
+def http_get(url: str) -> bytes:
+    """Rate-limited, host-allowlisted GET returning XML bytes. Does NOT cache —
+    callers that want to persist the response write it themselves. The freshness
+    probe uses this to fetch live WITHOUT clobbering the committed baseline it
+    diffs against."""
     global _last_request
-    raw_path = RAW_DIR / f"{name}.xml"
-    if offline:
-        if not raw_path.exists():
-            raise FileNotFoundError(
-                f"--offline but no committed cache at {raw_path} (run without --offline once)")
-        return raw_path.read_bytes()
-
-    url = PORTAL_BASE + path
     _check_host(url)
     wait = REQUEST_SPACING_SECONDS - (time.monotonic() - _last_request)
     if wait > 0:
@@ -115,6 +105,24 @@ def fetch(path: str, name: str, *, offline: bool) -> bytes:
     _last_request = time.monotonic()
     if not body.lstrip().startswith(b"<"):
         raise ValueError(f"portal returned non-XML for {url}: {body[:80]!r}")
+    return body
+
+
+def fetch(path: str, name: str, *, offline: bool) -> bytes:
+    """Return raw XML bytes for a portal endpoint path, writing the committed
+    raw cache on a live fetch.
+
+    offline: read the committed raw cache only (no network) — for CI and tests.
+    live: http_get() then persist under RAW_DIR so re-runs and the
+    self-verifying test never re-download.
+    """
+    raw_path = RAW_DIR / f"{name}.xml"
+    if offline:
+        if not raw_path.exists():
+            raise FileNotFoundError(
+                f"--offline but no committed cache at {raw_path} (run without --offline once)")
+        return raw_path.read_bytes()
+    body = http_get(PORTAL_BASE + path)
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     raw_path.write_bytes(body)
     return body
