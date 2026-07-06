@@ -135,6 +135,27 @@ Living audit trail. Each entry: date · area · description · root cause · sta
 - **FY26-28 by-area.** The HB 30 Conference Report is a policy-initiatives deck
   with no by-secretarial-area total table, so the new biennium contributes
   headline totals and quotes but not a pie slice set. Structural source gap.
+- **2026-07-05 · Enacted FY2026-2028 general-fund breakdown pending.** HB 30 is
+  enacted — the LIS portal lists it as a Chapter bill and returns its
+  per-secretariat all-funds totals (surfaced on the New budget tab, labeled as
+  all funds). But HAC has NOT yet published its post-session "Overview of the
+  enacted budget" summary document (committee reports for 2026 Special Session I
+  are empty in the portal), which is the source of the general-fund
+  by-secretarial-area table the site shows for earlier biennia. So the GF
+  by-area figures stay at "as introduced" and are labeled as such — deliberately
+  not faked from the all-funds API (a different frame). `scripts/freshness.py`
+  is the canary: it will flag the moment that overview (or any new stage)
+  publishes, at which point the enacted GF table gets curated in like Ch. 725.
+  Structural source gap, tracked, not a silent zero.
 - **"Virginia in Focus" FY25 by-area figures** live inside a chart image (no text
   layer), so they are deliberately not transcribed — only text-layer numbers are
   shipped, to keep every figure verifiable.
+- **2026-07-05 · Virginia in Focus p.17 top-10 total is internally inconsistent.**
+  The page's ten "Top 10 Programs" bar labels sum to ~$24.8B, but the same page's
+  headline reads "The top 10 general fund appropriations total $24.4 billion, or
+  72.3% of the general fund budget." All ten bar values are transcribed verbatim
+  and validated; the discrepancy is in the *source infographic*, not our data.
+  The Overview "Largest general fund programs" panel therefore surfaces the
+  document's own stated **share (72.3%)** rather than a computed dollar sum, so
+  the site never displays a total that contradicts the "$24.4 billion" quote it
+  also cites. Not a code bug — a documented source-side inconsistency.

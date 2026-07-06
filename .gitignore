@@ -25,6 +25,10 @@ sources/raw/*.pdf
 # self-verifies on a fresh clone.
 data/text/*.txt
 
+# Freshness-probe report (scripts/freshness.py): a per-run CI artifact consumed
+# by the freshness workflow to open an issue; never committed.
+freshness_report.md
+
 # Candidate-quote triage output (scripts/find_quotes.py) is a scratch review
 # queue for picking quotes into build_data.py -- cheaply regenerable from the
 # committed .pages.json + .sections.json and not read by the build or tests.

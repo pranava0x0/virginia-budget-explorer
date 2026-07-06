@@ -16,10 +16,23 @@
   `data/derived/executive_budget_doc_2026.candidate_quotes.json` (regenerate
   with `scripts/find_quotes.py executive_budget_doc_2026`), ranked by dollar
   magnitude within each of its 18 sections.
+- **Curate the enacted FY2026-2028 general-fund breakdown** (high). HB 30 is
+  enacted (surfaced on the New budget tab from the LIS portal, all-funds), but
+  HAC hasn't published its post-session GF "Overview of the enacted budget" yet,
+  so the by-area figures stay at "as introduced". When that overview publishes
+  (the freshness probe will flag it), add its `BY_AREA` rows like Ch. 725 and
+  retire the "as introduced" labels on that tab. See `issues.md`.
+- **Total-funds view toggle** (medium; now unblocked by `scripts/portal_api.py`).
+  A GF / all-funds toggle on the donut and area table, powered by the portal's
+  secretariat totals. Default stays GF; the toggle answers "where does the
+  federal money go." Every label must state the frame — GF and all-funds must
+  never be summed or silently mixed (the portal rows also include branch
+  aggregates that double-count; use each part's own total).
 - **Extend the time series further back** (high). The over-time chart now spans
   FY2024-26 (adopted + amended) and FY2026-28 (introduced). Pull the 2022 and 2020
   session overviews (FY2022-24, FY2020-22) and add their by-area tables to `BY_AREA`
-  for a 5+ point series per area.
+  for a 5+ point series per area. The portal covers sessions to 1996, but its
+  totals are all-funds — cross-check against the GF overview PDFs, don't mix frames.
 - **Per-area detail drill-down** (medium). Click an area → its top spending items
   (captured on the overview pages 9–10 / 22–26) and the relevant quotes.
 - **Deep-link tabs + per-figure "verified" tick** (low). Hash-route the tabs and
@@ -29,8 +42,27 @@
   fund-source chart values are in a raster; a gated, additive OCR pass could
   recover them — only if each recovered number stays page-verifiable.
 - **Print / share view** (low). A clean print stylesheet and per-section deep links.
+- **Comprehension aids from `improvement-plan.md` P2** (medium/low). Per-capita
+  framing (needs a sourced population data point), inflation-adjusted toggle
+  (CPI-U factors, cited), a "How Virginia budgets" explainer + glossary,
+  client-side search, and a data-download link (`budget.json` + a formula-
+  injection-neutralized `budget.csv`). Each is a small independent ship.
+- **Align on-site copy to the no-em-dash house style** (low). `DESIGN.md § 11.1`
+  bans em-dashes in displayed prose and wants a grep test over the rendered
+  build; the UI still has ~15 em-dashes in section descriptions and the hero
+  lede, and there is no test enforcing it. Either adopt the rule (rewrite +
+  test) or note the project's exception in `DESIGN.md`.
 
 ## Done
+
+- **P0 tier of `improvement-plan.md` + the portal-API foundation (P1.1)**
+  (2026-07-05): real CI gate (`.github/workflows/ci.yml`); rendered the dead
+  `gf_top10` key as the Overview "Largest programs" panel; `scripts/portal_api.py`
+  ingesting the LIS Budget Portal XML (self-verifying offline); weekly freshness
+  probe (`scripts/freshness.py` + workflow) that opens an issue on a new stage or
+  changed source; and corrected the stale "proposed" framing now that HB 30 is
+  enacted (Chapter law), with an all-funds enacted callout kept distinct from the
+  GF figures.
 
 - Ingest the 651-page DPB executive budget document (`dpb.virginia.gov/budget/buddoc26`):
   `scripts/section.py` splits it into per-office sections via its own PDF

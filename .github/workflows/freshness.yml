@@ -1,0 +1,41 @@
+# Weekly canary: detect a new budget stage (e.g. HB 30 gaining a "Chapter"
+# stage) or a re-issued source document, and open/append a GitHub issue so the
+# staleness is loud. Detection only — never auto-ingests; a human curates.
+name: Freshness probe
+
+on:
+  schedule:
+    - cron: "17 13 * * 1" # Mondays 13:17 UTC
+  workflow_dispatch: # manual run; takes no inputs
+
+# Read the tree; open an issue on drift. No untrusted inputs reach any run: step.
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: "3.12"
+      - name: Install pinned dependencies
+        run: pip install -r requirements.txt
+      - name: Probe the portal and source documents
+        id: probe
+        run: python3 scripts/freshness.py
+      - name: Open or update the freshness issue on drift
+        if: steps.probe.outputs.drift == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: "Budget freshness: new stage or source change detected"
+        run: |
+          num=$(gh issue list --state open --json number,title \
+                  --jq '[.[] | select(.title==env.TITLE)] | .[0].number // empty')
+          if [ -n "$num" ]; then
+            gh issue comment "$num" --body-file freshness_report.md
+          else
+            gh issue create --title "$TITLE" --body-file freshness_report.md
+          fi

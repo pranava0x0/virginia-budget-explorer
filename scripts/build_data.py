@@ -18,9 +18,10 @@ import sys
 import unicodedata
 from datetime import date
 
-from config import BUDGET_JSON, DOCS_DIR, MANIFEST, TEXT_DIR, canonical_area
+from config import BUDGET_JSON, DERIVED_DIR, DOCS_DIR, MANIFEST, TEXT_DIR, canonical_area
 
 LLMS_TXT = DOCS_DIR / "llms.txt"
+PORTAL_DIR = DERIVED_DIR / "portal"
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 log = logging.getLogger("build")
@@ -253,6 +254,66 @@ def recompute_quote_page(stem: str, needle: str) -> int | None:
     return None
 
 
+def load_enacted() -> dict | None:
+    """Derive the 'enacted' block from the committed LIS portal data.
+
+    The FY2026-2028 budget (HB 30) is law: the portal lists it as a Chapter bill
+    and returns its per-secretariat totals. Those totals are ALL FUNDS, a
+    different frame from the general-fund figures everywhere else on the site, so
+    the block is labeled as such and kept separate. The general-fund by-area
+    breakdown stays at the 'as introduced' stage until HAC publishes its enacted
+    post-session overview (a structural source gap; see issues.md).
+
+    Returns None if the portal files aren't present (the enacted callout simply
+    won't render); raises if the data is present but internally inconsistent.
+    """
+    sec_path = PORTAL_DIR / "secretariat_2026_2_HB30_Chapter.json"
+    idx_path = PORTAL_DIR / "portal_index.json"
+    if not (sec_path.exists() and idx_path.exists()):
+        log.warning("portal data absent — skipping the enacted block")
+        return None
+
+    sec = json.loads(sec_path.read_text())
+    idx = json.loads(idx_path.read_text())
+    # The enacted stage must actually exist in the portal index, or we don't
+    # claim it. This is the same fact the freshness probe watches.
+    chapter = any(b["year"] == sec["session_year"] and b["session_type"] == sec["session_type"]
+                  and b["house_bill"] == sec["bill"] and b["bill_type"] == "Chapter"
+                  for b in idx["bills"])
+    if not chapter:
+        raise VerifyError("portal secretariat data is 'Chapter' but no Chapter stage in portal_index")
+    if sec["frame"] != "all funds":
+        raise VerifyError(f"enacted block expects an all-funds source, got {sec['frame']!r}")
+
+    operating = next((p for p in sec["parts"] if p["part"] == "1"), None)
+    if not operating or not operating["totals_year1"]:
+        raise VerifyError("portal secretariat data missing Part 1 (Operating Expenses) totals")
+
+    return {
+        "bill": "HB 30",
+        "biennium": sec["biennium"],
+        "stage": "Chapter (enacted)",
+        "session": "2026 Special Session I",
+        "budget_year1": sec["budget_year1"],
+        "budget_year2": sec["budget_year2"],
+        "frame": "all funds",
+        "operating_all_funds": {
+            "fy1_exact": operating["totals_year1"],
+            "fy2_exact": operating["totals_year2"],
+            "fy1_billions": round(operating["totals_year1"] / 1e9, 1),
+            "fy2_billions": round(operating["totals_year2"] / 1e9, 1),
+        },
+        "gf_by_area_stage": "As introduced",
+        "gf_by_area_note": (
+            "The by-area figures are general fund, HB 30 as introduced (Jan 2026). "
+            "The enacted general-fund breakdown will appear when the House "
+            "Appropriations Committee publishes its post-session overview."),
+        "source": sec["source"],
+        "endpoint": sec["endpoint"],
+        "confirmed_at": sec["fetched_at"],
+    }
+
+
 # --- build -----------------------------------------------------------------
 def build() -> dict:
     manifest = {m["stem"]: m for m in json.loads(MANIFEST.read_text())}
@@ -348,6 +409,10 @@ def build() -> dict:
     # rebuilding from unchanged documents must not advance the freshness stamp.
     data_as_of = max(m["as_of"] for m in manifest.values())
 
+    # Enacted-stage status + all-funds totals, from the committed LIS portal data
+    # (kept separate from the GF figures by frame).
+    enacted = load_enacted()
+
     data = {
         "meta": {
             "title": "Virginia Budget Explorer",
@@ -368,6 +433,7 @@ def build() -> dict:
         "totals": totals,
         "quotes": quotes,
         "next_year_changes": next_year,
+        "enacted": enacted,
         "sources": list(manifest.values()),
     }
     return data, checks
@@ -402,7 +468,18 @@ def render_llms(data: dict) -> str:
         L.append(f"- {r['area']}: ${r['millions']/1000:.1f}B "
                  f"— [p. {r['page']}]({src(r['source_stem'], r['page'])})")
     L.append("")
-    L.append("## Next year (FY2026-2028, HB 30) — key changes")
+    en = data.get("enacted")
+    if en:
+        L.append("## FY2026-2028 budget (HB 30) — enacted")
+        oa = en["operating_all_funds"]
+        L.append(f"- Status: {en['stage']} ({en['session']}), confirmed via the "
+                 f"LIS Budget Portal on {en['confirmed_at']}.")
+        L.append(f"- Operating budget, ALL FUNDS: ${oa['fy1_billions']}B (FY{en['budget_year1']}) "
+                 f"and ${oa['fy2_billions']}B (FY{en['budget_year2']}) "
+                 f"— [portal]({en['endpoint']}).")
+        L.append(f"- {en['gf_by_area_note']}")
+        L.append("")
+    L.append("## FY2026-2028 (HB 30) — key changes (general fund, as introduced)")
     for c in data.get("next_year_changes", []):
         L.append(f"- [{c['area']}] {c['headline']}: \"{c['text']}\" "
                  f"([p. {c['page']}]({src(c['source_stem'], c['page'])}))")

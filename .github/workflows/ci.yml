@@ -1,0 +1,29 @@
+# Verification gate: the shipped data must stay verbatim-true to its sources.
+# Runs the per-data-point validator (non-zero exit on any drift) and the test
+# suite against the COMMITTED artifacts (docs/data/*.json + data/text/*.pages.json)
+# — the raw PDFs are gitignored, so nothing here re-downloads or re-extracts.
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+# Least privilege: the gate only reads the tree (Cordyceps CI/CD-misconfig class).
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: "3.12"
+      - name: Install pinned dependencies
+        run: pip install -r requirements.txt
+      - name: Validate every figure and quote against its source page
+        run: python3 scripts/validate.py
+      - name: Run the test suite
+        run: python3 -m unittest discover -s tests -v
