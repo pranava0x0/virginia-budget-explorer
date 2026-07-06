@@ -195,6 +195,22 @@ class TestAppJs(unittest.TestCase):
         self.assertFalse(missing, f"DOC_SHORT in docs/app.js is missing stem(s): {missing}")
 
 
+class TestBuildInSync(unittest.TestCase):
+    """The shipped budget.json must equal what build_data.py produces right now.
+    An edit to a curated constant that isn't rebuilt (or a hand-edit to the JSON)
+    then fails loudly -- 'generated output commits with its source'. build() also
+    re-verifies every figure/quote against its page, so this doubles as the CI
+    gate the README advertises."""
+
+    def test_budget_json_matches_builder(self):
+        from build_data import build
+        fresh, _ = build()
+        # meta.built_at is date.today() at build time -- the one volatile field.
+        strip = lambda d: {**d, "meta": {k: v for k, v in d["meta"].items() if k != "built_at"}}
+        self.assertEqual(strip(BUDGET), strip(fresh),
+                         "docs/data/budget.json is stale -- re-run scripts/build_data.py")
+
+
 class TestValidationArtifact(unittest.TestCase):
     """The shipped validation.json must exist and report all points passing."""
     def test_validation_all_passed(self):
