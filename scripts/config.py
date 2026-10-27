@@ -6,6 +6,7 @@ allowlist, and the canonical secretarial-area names. Everything downstream
 """
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 # --- Paths -----------------------------------------------------------------
@@ -18,7 +19,8 @@ MANIFEST = ROOT / "sources" / "manifest.json"
 BUDGET_JSON = DOCS_DIR / "data" / "budget.json"
 
 # --- Network ethics --------------------------------------------------------
-USER_AGENT = "VABudgetDashboard/0.1 (civic budget research; 2497510+pranava0x0@users.noreply.github.com)"
+# Contact for the User-Agent comes from the environment; never commit a personal address.
+USER_AGENT = "VABudgetDashboard/0.1 (civic budget research; " + os.environ.get("CONTACT_EMAIL", "2497510+pranava0x0@users.noreply.github.com") + ")"
 REQUEST_SPACING_SECONDS = 2.0  # >= 1.5s between requests to one host
 # Authoritative origins only. The scraper RAISES on any off-allowlist host.
 ALLOWED_HOSTS = {
